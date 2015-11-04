@@ -1,0 +1,246 @@
+		body {
+			background-image: url("img/bg.jpg");
+		}
+		#header {
+			text-align: center;
+		}
+		#formContent {
+			color: #ffffff;
+		}
+		input.inputText {
+			color: #000000;
+			width:100%;
+		}
+		select#stateInput {
+			color: #000000;
+			width: 100%;
+		}
+		#transbox {	
+			/*height: 130px;
+			width: 1100px;*/
+			position: relative;
+			margin-left:auto;
+			margin-right:auto;
+			background-color: rgba(20, 20, 20, 0.3);
+			padding: 20px;
+		}
+		select {
+			color: #000000;
+		}
+		#submitButton {
+			color: black;
+			margin-top:20px;
+			/*margin-left: 80px;*/
+		}
+		#submitBtn{
+			width:65px;
+		}
+		#PowerBy {
+			font-size: 80%;
+			font-weight:bold;
+			width:150px;
+			height:100px;
+		}
+		#BtnPwb {
+			height:120px;
+			float:right;
+		}
+		#redStar {
+			color: red;
+		}
+		span.desc {
+			font-weight: bold;
+		}
+		p#streetWarning, #cityWarning, #stateWarning {
+			color: #cc0000;
+			font-size:90%;
+			margin-top: -5px;
+		}
+		#resSection {
+			width:auto;
+			height:auto;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		#weatherRes {
+			/*border: 1px solid green;*/
+			position: relative;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:10px;
+		}
+		#mapRes {
+			border: 1px solid blue;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:10px;
+		}
+		.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+			background-color: #2A6AA2;
+			color: #ffffff;
+		}
+		.gray {
+			color: 2A6AA2;
+			background-color: #E4E4E4;
+		}
+		
+		#nowIcon {
+			margin-top: 20px;
+		}
+		#nowFb {
+			float:right;
+			margin-bottom: 5px;
+			margin-right: 5px;
+			margin-top:-10px;
+
+		}
+		#nowHeader {
+			background-color:#E77980;
+		}
+		.row#nowHeader {
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+		.col-xs-12 .col-sm-6 {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		
+		.well.col-sm-1 {
+			border-color: #2e3429;
+			margin: 10px 5px;
+			padding: 1px;
+		}
+		
+		.panel-default > .panel-heading {
+			background-image: linear-gradient(to bottom, #ffffff 0px, #ffffff 100%);
+			background-repeat: repeat-x;
+		}
+		.panel-body {
+			background-color: #f5f5f5;
+		}
+		.daywathersbox {
+			background:#2e3439;
+		}
+		.daywathers {
+			margin-left:200px;
+			font-weight:bold;
+		}
+		.daysize {
+			font-size: 80%;
+		}
+		#day1 {
+			color:white;
+			background:#367db5;
+		}
+		#day2 {
+			color:white;
+			background:#EC4444;
+		}
+		#day3 {
+			color:white;
+			background:rgb(223,139,73);
+		}
+		#day4 {
+			color:white;
+			background:rgb(163,161,51);
+		}
+		#day5 {
+			color:white;
+			background:rgb(145,106,160);
+		}
+		#day6 {
+			color:white;
+			background:rgb(232,118,120);
+		}
+		#day7 {
+			color:white;
+			background:rgb(196,65,107);
+		}
+		.dayweather {
+			width: 100%;
+			height: 100%;
+		}
+		#next24head {
+			background-color:rgb(26,112,172);
+			font-weight:bold;
+			color:white;
+		}
+		#next24body {
+			background-color: white;
+				
+		}
+		.next24icon{
+			width: 20%;
+			height: 20%;
+		}
+		.table-responsive {
+			border: 0px solid #ddd;
+		}
+		.table .table.next24collapse {
+			background:#f5f5f5;
+		}
+		.next24head2{
+			font-weight: bold;
+		}
+		#popIcon{
+			width:30%;
+			height:30%;
+		}
+		.popupText {
+			font-weight:normal;
+		}
+		
+		/*@media(max-width:992px) {
+			
+		
+			#transbox {
+				height: auto;
+				width: 300px;
+				position: relative;
+				margin-left: auto;
+				margin-right: auto;
+				padding:20px;
+			}
+			input.inputText {
+				width: 200px;
+			}
+			select.stateInput {
+				color: #000000;
+				width: 200px;
+			}
+			#submitButton {
+				margin-left: 65px;
+				margin-bottom: 10px;
+			}
+			#PowerBy {
+				font-size: 80%;
+				margin-left: 70px;
+			}
+			#resSection {
+				width:325px;
+			}
+			ul.nav {
+				font-weight:bold;
+				font-size:70%;
+			}
+			.well {
+				border-radius:30px;
+			}
+			.dayweather {
+				width: 40%;
+				height: 20%;
+			}
+			.daywathers {
+				margin-left:auto;
+			}
+			.next24icon{
+				width: 60%;
+				height: 20%;
+			}
+			.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+				padding:5px;
+			}
+			
+			
+		}	*/
