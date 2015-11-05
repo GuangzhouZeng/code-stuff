@@ -31,6 +31,10 @@ function convertWindSpeed(temp){
 	temp=(degree=="Celsius")?temp.toFixed(2)+' m/s':temp.toFixed(2)+' mph';
 	return temp;
 }
+function convertWindSpeedInt(temp){
+	temp=(degree=="Celsius")?Math.round(temp)+' m/s':Math.round(temp)+' mph';
+	return temp;
+}
 function convertIcon(str){
 	var icon;
 	var folder="http://cs-server.usc.edu:45678/hw/hw8/images/"
@@ -178,7 +182,7 @@ function showNow(info){
 	
 	console.log(sumIcon);
 	
-	var nowInfoHtml='<div class="col-md-6">'
+	var nowInfoHtml='<div class="col-md-6" style="padding-left: 0px;">'
 	+'				<div class="table-responsive">'
 	+'				<table class="table">'
 	+'					<div id="nowHeader" class="row">'
@@ -241,7 +245,16 @@ function showNow(info){
 	$("#menu1").html(txt);*/
 }
 function showNextHours(info){
-	var txt="<p><br>";
+	//var txt="<p><br>";
+	var nextHoursHtml='	<table class="table table-responsive text-center">'
+					+	'		<thead id="next24head">'
+					+	'			<td class="col-sm-2 next24title">Time</th>'
+					+	'			<td class="col-sm-2 next24title">Summary</th>'
+					+	'			<td class="col-sm-2 next24title">Cloud Cover</th>'
+					+	'			<td class="col-sm-2 next24title">Temp</th>'
+					+	'			<td class="col-sm-2 next24title">View Details</th>'
+					+	'		</thead>'
+					+	'		<tbody id="next24body">';
 	for(var i=0;i<24;i++){
 		var time=info.hourly.data[i].time;
 		var icon=info.hourly.data[i].icon;
@@ -261,22 +274,66 @@ function showNextHours(info){
 
 		time=convertTime(time);
 		icon=convertIcon(icon);
-		cloud=cloud.toFixed(2);
-		wind=Math.round(wind);
+		cloud=parseInt(cloud)+'%';
+		wind=convertWindSpeedInt(wind);
 		humidity=Math.round(humidity)+'%';
 		visibility=visibility.toFixed(2);
 		pressure=pressure+"mb";
 		
-		txt+=i+" "+time+" "+icon+" "+cloud+" "+
-				temp+" "+wind+" "+humidity+
-			" "+visibility+" "+pressure+"<br>";
+		//html
+		nextHoursHtml+='<tr>'
+					+	'		<td >'+time+'</td>'
+					+	'		<td ><img class="next24icon" src="'+icon+'"></td>'
+					+	'		<td >'+cloud+'</td>'
+					+	'		<td >'+temp+'</td>'
+					+	'		<td >'
+					+	'			<a data-toggle="collapse" href="#t'+i+'" data-parent="#accordion">'
+					+	'				<span class="glyphicon glyphicon-plus">'
+					+	'				</span>'
+					+	'			</a>'
+					+	'		</td>'
+					+	'	</tr>'
+					+	'	<tr>'
+					+	'		<td colspan="5" style="border-bottom-width: 0px; padding-top: 0px; padding-bottom: 0px;">'
+					+	'			<div id="t'+i+'" class="collapse ">'
+					+	'				<table class="table  next24collapse">'
+					+	'					<thead class="well">'
+					+	'						<td class="next24head2">Wind</td>'
+					+	'						<td class="next24head2">Humidity</td>'
+					+	'						<td class="next24head2">Visibility</td>'
+					+	'						<td class="next24head2">Pressure</td>'
+					+	'					</thead>'
+					+	'					<tbody>'
+					+	'						<td>'+wind+'</td>'
+					+	'						<td>'+humidity+'</td>'
+					+	'						<td>'+visibility+'</td>'
+					+	'						<td>'+pressure+'</td>'
+					+	'					</tbody>'
+					+	'				</table>'
+					+	'			</div>		'	
+					+	'		</td>'
+					+	'	</tr>';
+							
+		//
+		
+		
+		//txt+=i+" "+time+" "+icon+" "+cloud+" "+
+		//		temp+" "+wind+" "+humidity+
+		//	" "+visibility+" "+pressure+"<br>";
 	}
-	txt+="</p>";
-	document.getElementById("24info").innerHTML=txt;
-	//$("#menu1").html(txt);
+	
+	nextHoursHtml+='	</tbody>'
+			+	'	</table>';
+	
+	//txt+="</p>";
+	//document.getElementById("24info").innerHTML=txt;
+	$("#menu2").html(nextHoursHtml);
+	//$("#menu2").html(txt);
 }
 function showNextDays(info){
-	var txt="<p><br>";
+	//var txt="<p><br>";
+	var nextDaysHtml='<div class="container-fluid text-center daywathersbox">'
+					+'<div class="daywathers text-center">';
 	for(var i=1;i<=7;i++){
 		var time=info.daily.data[i].time;
 		var icon=info.daily.data[i].icon;
@@ -302,20 +359,89 @@ function showNextDays(info){
 		sunrise=convertTime(sunrise);
 		sunset=convertTime(sunset);
 		humidity=Math.round(humidity)+"%";
-		wind=wind.toFixed(2);
+		wind=convertWindSpeed(wind);
 		pressure=pressure+"mb";
 		
+		
+		//
+		
+		nextDaysHtml+='	<div>'
+					+		'<div data-toggle="modal" data-target="#pop'+i+'" class="clickable">'
+					+		'<div id="day'+i+'" class="well col-md-1">'
+					+					'<p class="daysize">'+day+'</p>'
+					+					'<p>'+monthDate+'</p>'
+					+					'<img class="dayweather" src="'+icon+'" alt="sleet" width="10px" height="10px">'
+					+					'<p>Min Temp</p>'
+					+					'<h3>'+minT+'</h3>'
+					+					'<p>Max Temp</p>'
+					+					'<h3>'+maxT+'</h3>'
+					+		'</div>'
+					+		'</div>'
+					+		'<div id="pop'+i+'" class="modal fade" role="dialog">'
+					+			'<div class="modal-dialog">'
+					+				'<div class="modal-content">'
+					+					'<div class="modal-header">'
+					+					'	<button type="button" class="close" data-dismiss="modal">&times;</button>'
+					+	'					<h4>Weather in '+city+' on '+monthDate+'</h5>'
+					+	'				</div>'
+					+	'				<div class="modal-body">'
+					+	'					<img id="popIcon" src="'+icon+'" alt="'+icon+'">'
+					+	'					<h3>Friday: Mostly cloudy throughout the day.</h3>'
+					+	'					<div class="row">'
+					+	'						<div class="col-md-4">Sunrise Time '
+					+	'							<div class="popupText">'+sunrise
+					+	'							</div>'
+					+	'						</div>'
+					+	'						<div class="col-md-4">Sunset Time'
+					+	'							<div class="popupText">'+sunset
+					+	'							</div>'
+					+	'						</div>'
+					+	'						<div class="col-md-4">humidity'
+					+	'							<div class="popupText">'
+					+									humidity
+					+	'							</div>'
+					+	'						</div>'
+					+	'						<div class="col-md-4">Wind Speed'
+					+	'							<div class="popupText">'+wind
+					+	'							</div>'
+					+	'						</div>'
+					+	'						<div class="col-md-4">Visibility'
+					+	'							<div class="popupText">'+visibility+'mi'
+					+	'							</div>'
+					+	'						</div>'
+					+	'						<div class="col-md-4">Pressure'
+					+	'							<div class="popupText">'
+					+									pressure
+					+	'							</div>'
+					+	'						</div>'
+					+	'					</div>'
+					+	'				</div>'
+					+	'				<div class="modal-footer">'
+					+	'					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>'
+					+	'				</div>'
+					+	'			</div>'
+					+	'		</div>'
+					+	'	</div>'
+					+	'</div>'	
 
-		/*txt+=i+" "+time+" "+icon+" "+minT+" "+
-			maxT+" "+summary+" "+sunrise+" "+sunset+" "+
-			humidity+" "+wind+" "+visibility+" "+pressure+"<br>";*/
+					
+		
+		
+		//
+		
+		
+
+/*
 		txt+=i+" "+day+" "+monthDate+" "+icon+" "+minT+" "+
 			maxT+" "+summary+" "+sunrise+" "+sunset+" "+
-			humidity+" "+wind+" "+visibility+" "+pressure+"<br>";
+			humidity+" "+wind+" "+visibility+" "+pressure+"<br>";*/
 			
 	}
-	txt+="</p>";
-	document.getElementById("7info").innerHTML=txt;
+	nextDaysHtml+='</div>		'
+				+'</div>';
+	//txt+="</p>";
+	//document.getElementById("7info").innerHTML=txt;
+	$("#menu3").html(nextDaysHtml);
 	
 }
 function loadResult(str1,str2,str3,str4){
