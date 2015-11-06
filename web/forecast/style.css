@@ -78,6 +78,7 @@
 		.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
 			background-color: #2A6AA2;
 			color: #ffffff;
+			border-color:#2A6AA2;
 		}
 		.gray {
 			color: 2A6AA2;
@@ -189,6 +190,11 @@
 		.popupText {
 			font-weight:normal;
 		}
+		#mapLayer{
+			width:	auto;
+			height:	443px;
+		}
+		
 		
 		@media(max-width:992px) {
 			ul.nav {
@@ -197,6 +203,9 @@
 			}
 			.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
 				padding:5px;
+			}
+			.nav > li > a {
+				padding: 10px 3px;
 			}
 			.well {
 				border-radius:30px;

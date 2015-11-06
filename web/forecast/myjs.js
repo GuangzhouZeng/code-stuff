@@ -4,13 +4,13 @@ var picVal,descVal;
 var tabhtml='<div>	'	
 	+	'<div class="col-xs-12 col-sm-12">				'
 	+	'<section id="weatherRes">'
-	+	'	<ul class="nav nav-tabs">'
+	+	'	<ul class="nav nav-tabs" style="border-bottom-width: 0px;">'
 	+	'		<li class="active"><a class="gray" data-toggle="pill" href="#menu1" >Right Now</a></li>'
 	+	'		<li ><a class="gray" data-toggle="pill" href="#menu2">Next 24 Hours</a></li>'
 	+	'		<li ><a class="gray" data-toggle="pill" href="#menu3">Next 7 Days</a></li>'
 	+	'	</ul>'
 	+	'	<div class="tab-content">'
-	+	'		<div id="menu1" class="tab-pane fade in active">	'	
+	+	'		<div id="menu1" class="tab-pane fade in active" >	'	
 	+	'		</div>'
 	+	'		<div id="menu2" class="tab-pane fade">'				
 	+	'		</div>'			
@@ -147,8 +147,45 @@ function checkEmpty(){
 		return false;
 	}
 }
+function showMap(lon,lat){
+	var lonlat = new OpenLayers.LonLat(lon,lat).transform('EPSG:4326','EPSG:3857');
+    var map = new OpenLayers.Map({div:"mapLayer",
+								center:lonlat});
+	
+	
+	//map.setCenter(new OpenLayers.LonLat(-71, 42), 4);
+	// Create OSM overlays
+    var mapnik = new OpenLayers.Layer.OSM();
+	
+	var layer_cloud = new OpenLayers.Layer.XYZ(
+        "clouds",
+        "http://${s}.tile.openweathermap.org/map/clouds/${z}/${x}/${y}.png",
+        {
+            isBaseLayer: false,
+            opacity: 0.7,
+            sphericalMercator: true
+        }
+    );
+
+    var layer_precipitation = new OpenLayers.Layer.XYZ(
+        "precipitation",
+        "http://${s}.tile.openweathermap.org/map/precipitation/${z}/${x}/${y}.png",
+        {
+            isBaseLayer: false,
+            opacity: 0.7,
+            sphericalMercator: true
+        }
+    );
+	
+	map.addLayers([mapnik, layer_precipitation, layer_cloud]);
+	//map.addLayers([mapnik]);
+	map.zoomTo(9);
+}
 function showNow(info){
 	var unit=degree=="Celsius"?"si":"en";
+	
+	var lon=info.longitude;
+	var lat=info.latitude;
 	
 	var timezone=info.timezone;
 	var sumIcon=info.currently.icon;
@@ -185,7 +222,7 @@ function showNow(info){
 	picVal=sumIcon;//used in facebookPost()
 	console.log(picVal);
 	
-	var nowInfoHtml='<div class="col-md-6" style="padding-left: 0px;">'
+	var nowInfoHtml='<div class="col-md-6" style="padding-left: 0px;padding-right: 0px;">'
 	+'				<div class="table-responsive">'
 	+'				<table class="table">'
 	+'					<div id="nowHeader" class="row">'
@@ -221,12 +258,17 @@ function showNow(info){
 	+'					</tr>'
 	+'				</table>'
 	+'				</div>'
-	+'				</div>';	
+	+'				</div>'
+	+'				<div class="col-md-6" style="padding-left: 0px;padding-right: 0px;">'
+	+'				<div id="mapLayer">'
+	+'				</div>'
+	+'				</div>';
 
 	$("#menu1").html(nowInfoHtml);
-	/*
+	showMap(lon,lat);
 
 	
+	/*
 	////test here
 	var testinfo=timezone+" "+summary+" "+temper+" "+
 		sumIcon+" "+precIn+" "+precPr+" "+windSpeed+" "+
