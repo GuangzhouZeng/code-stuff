@@ -1,4 +1,5 @@
 var street, city, state, degree;
+var picVal,descVal;
 
 var tabhtml='<div>	'	
 	+	'<div class="col-xs-12 col-sm-12">				'
@@ -164,7 +165,8 @@ function showNow(info){
 	var sunrise=info.daily.data[0].sunriseTime;
 	var sunset=info.daily.data[0].sunsetTime;
 	
-	console.log(sumIcon);
+	descVal=summary+','+convertTempInt(temper); //used in facebookPost()
+	console.log(descVal);
 	
 	sumIcon=convertIcon(sumIcon);
 	summary=summary+" in "+city+", "+state;
@@ -180,7 +182,8 @@ function showNow(info){
 	sunrise=convertTime(sunrise);
 	sunset=convertTime(sunset);
 	
-	console.log(sumIcon);
+	picVal=sumIcon;//used in facebookPost()
+	console.log(picVal);
 	
 	var nowInfoHtml='<div class="col-md-6" style="padding-left: 0px;">'
 	+'				<div class="table-responsive">'
@@ -197,7 +200,7 @@ function showNow(info){
 	+'							<h1 id="nowTem">'+temper+'</h1>'
 	+'							<p id="nowMinMax">L:'+minT+' | H:'+maxT+'</p>'
 	+'							</center>'
-	+'							<div><img id="nowFb" src="http://cs-server.usc.edu:45678/hw/hw8/images/fb_icon.png" width="30px" height="30px"></div>'
+	+'							<div><a style="cursor:hand" onclick="facebookPost(\''+picVal+'\',\''+descVal+'\')"><img id="nowFb" src="http://cs-server.usc.edu:45678/hw/hw8/images/fb_icon.png" width="30px" height="30px"></a></div>'
 	+'						</div>'
 	+'					</div>'
 	+'					<tr class="info"><td>Precipitation</td><td>'+precIn+'</td>'
@@ -219,8 +222,7 @@ function showNow(info){
 	+'				</table>'
 	+'				</div>'
 	+'				</div>';	
-	
-	console.log(sumIcon);
+
 	$("#menu1").html(nowInfoHtml);
 	/*
 
@@ -501,3 +503,47 @@ function clickClear(){
 	document.getElementsByName("Degree")[1].checked=false;
 	$("#resSection").html("");
 }
+
+//facebook things
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '989492937740238',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+};
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+	function facebookPost(picVal,descVal){
+		console.log(descVal);
+		console.log(picVal);
+		nameVal='Current Weather in '+city+', '+state;
+		capVal="WEATHER INFORMATION FROM FORCAST.IO"
+		FB.ui(
+		{
+			method: 'feed',
+			name: nameVal,
+			link: 'http://cs-server.usc.edu:6451/HW8/HW8.html',
+			picture: picVal,
+			caption: capVal,
+			description: descVal,
+			message: "Message here"
+		},function(response){
+			if(response&&response.post_id){
+				console.log("1");
+				alert("Posted Successfully");
+			}else{
+				console.log("2");
+				alert("Not Posted")
+			}
+		});
+	}
+
+
