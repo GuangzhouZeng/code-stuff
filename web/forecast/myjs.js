@@ -1,5 +1,6 @@
 var street, city, state, degree;
 var picVal,descVal;
+var mapIsOn=0;
 
 var tabhtml='<div>	'	
 	+	'<div class="col-xs-12 col-sm-12">				'
@@ -179,7 +180,8 @@ function showMap(lon,lat){
 	
 	map.addLayers([mapnik, layer_precipitation, layer_cloud]);
 	//map.addLayers([mapnik]);
-	map.zoomTo(9);
+	map.zoomTo(12);
+	mapIsOn=1;
 }
 function showNow(info){
 	var unit=degree=="Celsius"?"si":"en";
@@ -524,6 +526,9 @@ function loadResult(str1,str2,str3,str4){
 function clickSubmit(){
 	if(checkEmpty()) return; //if empty input exists
 	else{
+		if(mapIsOn){
+			$("mapLayer").html("");
+		}
 		street=document.getElementsByName("Street")[0].value;
 		city=document.getElementsByName("City")[0].value;
 		state=document.getElementsByName("State")[0].value;
@@ -555,37 +560,35 @@ window.fbAsyncInit = function() {
     });
 };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
-	function facebookPost(picVal,descVal){
-		console.log(descVal);
-		console.log(picVal);
-		nameVal='Current Weather in '+city+', '+state;
-		capVal="WEATHER INFORMATION FROM FORCAST.IO"
-		FB.ui(
-		{
-			method: 'feed',
-			name: nameVal,
-			link: 'http://cs-server.usc.edu:6451/HW8/HW8.html',
-			picture: picVal,
-			caption: capVal,
-			description: descVal,
-			message: "Message here"
-		},function(response){
-			if(response&&response.post_id){
-				console.log("1");
-				alert("Posted Successfully");
-			}else{
-				console.log("2");
-				alert("Not Posted")
-			}
-		});
-	}
+function facebookPost(picVal,descVal){
+	console.log(descVal);
+	console.log(picVal);
+	nameVal='Current Weather in '+city+', '+state;
+	capVal="WEATHER INFORMATION FROM FORCAST.IO"
+	FB.ui(
+	{
+		method: 'feed',
+		name: nameVal,
+		link: 'http://cs-server.usc.edu:6451/HW8/HW8.html',
+		picture: picVal,
+		caption: capVal,
+		description: descVal,
+		message: "Message here"
+	},function(response){
+		if(response&&response.post_id){
+			alert("Posted Successfully");
+		}else{
+			alert("Not Posted")
+		}
+	});
+}
 
 
