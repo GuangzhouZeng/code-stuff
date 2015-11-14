@@ -1,3 +1,9 @@
+/***********************************************
+ * Author: Guangzhou Zeng
+ * Date: 11/14/2015
+ * 
+ */
+
 package spatialDB.Draw;
 
 import java.awt.BorderLayout;
@@ -6,6 +12,10 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -19,27 +29,16 @@ import javax.swing.JPanel;
 import oracle.spatial.geometry.JGeometry;
 import oracle.sql.STRUCT;
 
-
-class Region{
-	public String regi_id;
-	public int vertice;
-	public int[] shape;
-	Region(String regi_id, int vertice, int[] shape){
-		this.regi_id=regi_id;
-		this.vertice=vertice;
-		this.shape=shape;
-	}
-}
-
-class Lion{
-	
-}
-
-class DrawPanel extends JPanel{
+class DrawPanel extends JPanel implements MouseListener{
+	public Boolean isChecked=false; //when true, open the mouse listener
+	int clickX=-1;
+	int clickY=-1;
 	public DrawPanel(){
 		setBackground(Color.WHITE);
+		addMouseListener(this);
 	}
 	public void paint(Graphics g){
+		super.paint(g);
 		//draw region
 		Connection con = null;
 		try {
@@ -62,9 +61,9 @@ class DrawPanel extends JPanel{
 				STRUCT st=(oracle.sql.STRUCT) pond_rs.getObject(1);
 				JGeometry j_geom = JGeometry.load(st);
 				double point[]=j_geom.getOrdinatesArray();
-				int x=(int)point[0];
-				int y=(int)point[3];
 				int r=(int)(point[5]-point[1]);
+				int x=(int)point[0]-r/2;
+				int y=(int)point[3]-r/2;
 				g.setColor(Color.BLACK);
 				g.drawOval(x, y, r, r);
 				g.setColor(Color.blue);
@@ -86,10 +85,6 @@ class DrawPanel extends JPanel{
 		    	double point[]=j_geom.getPoint();
 		    	g.setColor(Color.GREEN);
 		    	g.fillOval((int)point[0], (int)point[1], 5, 5);
-		    	/*for(int i=0;i<point.length;i++){
-		    		System.out.print(point[i]+" ");
-		    	}
-		    	System.out.println();*/
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -120,31 +115,101 @@ class DrawPanel extends JPanel{
 			e.printStackTrace();
 		}
 		
+		if(isChecked==true){
+			//find lions
+			String str="SELECT L.shape ";
+			str+="FROM lion L, region R1 ";
+			str+="WHERE R1.regi_id IN(";
+			str+="SELECT R2.regi_id ";
+			str+="FROM region R2 ";
+			str+="WHERE SDO_CONTAINS(R2.shape,  ";
+			str+="SDO_GEOMETRY( ";
+			str+="	2001,NULL,NULL, ";
+			str+="	SDO_ELEM_INFO_ARRAY(1,1,1), ";
+			str+="	SDO_ORDINATE_ARRAY("+clickX+","+clickY+")))='TRUE' ";
+			str+=") AND SDO_CONTAINS(R1.shape, L.shape)='TRUE'";
+			
+			//find ponds
+			String str2="SELECT P.shape ";
+			str2+="FROM pond P, region R1 ";
+			str2+="WHERE R1.regi_id IN(";
+			str2+="SELECT R2.regi_id ";
+			str2+="FROM region R2 ";
+			str2+="WHERE SDO_CONTAINS(R2.shape,  ";
+			str2+="SDO_GEOMETRY( ";
+			str2+="	2001,NULL,NULL, ";
+			str2+="	SDO_ELEM_INFO_ARRAY(1,1,1), ";
+			str2+="	SDO_ORDINATE_ARRAY("+clickX+","+clickY+")))='TRUE' ";
+			str2+=") AND SDO_CONTAINS(R1.shape, P.shape)='TRUE'";
+			
+			
+			Statement slt_check_lion, slt_check_pond;
+			try {
+				slt_check_lion=con.createStatement();
+				slt_check_pond=con.createStatement();
+				ResultSet check_lion_rs=slt_check_lion.executeQuery(str);
+				ResultSet check_pond_rs=slt_check_pond.executeQuery(str2);
+				
+				while(check_lion_rs.next()){
+					STRUCT st=(oracle.sql.STRUCT) check_lion_rs.getObject(1);
+					JGeometry j_geom=JGeometry.load(st);
+					double point[]=j_geom.getPoint();
+					g.setColor(Color.RED);
+					g.fillOval((int)point[0], (int)point[1], 5,5);
+				}
+				while(check_pond_rs.next()){
+					STRUCT st=(oracle.sql.STRUCT) check_pond_rs.getObject(1);
+					JGeometry j_geom=JGeometry.load(st);
+					double point[]=j_geom.getOrdinatesArray();
+					int r=(int)(point[5]-point[1]);
+					int x=(int)point[0]-r/2;
+					int y=(int)point[3]-r/2;
+					g.setColor(Color.RED);
+					g.fillOval(x, y, r, r);
+				}
+			}catch (SQLException e){
+				e.printStackTrace();
+			}
+		}
+	
+	}
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if(isChecked==true){
+			System.out.println("X: "+e.getX());
+			System.out.println("Y: "+e.getY());
+			clickX=e.getX();
+			clickY=e.getY();
+			repaint();
+			validate();
+		}
 		
-		/*int[] x=new int[]{400,500,500,400};
-		int[] y=new int[]{0,0,100,100};
-		g.drawPolygon(x,y,4);
+	}
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
-		//draw pond
-		g.drawOval(220, 430, 15, 15);
-		g.setColor(Color.BLUE);
-		g.fillOval(220, 430, 15, 15);
+	}
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
-		//draw lion
-		g.setColor(Color.GREEN);
-		g.fillOval(350, 50, 5, 5);
-		g.fillOval(355, 190, 5, 5);
-		g.fillOval(30, 210, 5, 5);*/
+	}
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
-		
-		//g.drawPolygon();
 	}
 }
 
 
 public class Draw extends JFrame{
-	
 	public Draw(int width, int height){
 		setSize(width,height);
 		setTitle("Spatial View");
@@ -170,74 +235,25 @@ public class Draw extends JFrame{
 	    c.add(checkPane,BorderLayout.NORTH);
 	    c.add(drawpanel,BorderLayout.CENTER);
 
+	    checkBtn.addItemListener(new ItemListener(){
+
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				// TODO Auto-generated method stub
+				if(drawpanel.isChecked==true){
+					drawpanel.isChecked=false;
+					 drawpanel.repaint();
+				}
+				else 
+					drawpanel.isChecked=true;
+			}
+	    });
+	   
 	    validate();
 	}
-	/*public static void connectToAndQueryDatabase(String username, String password) throws SQLException {
-	    Connection con = DriverManager.getConnection(
-	       "jdbc:oracle:thin:@localhost:1521:xe",
-	        username,
-	         password);
-	    Statement stmt = con.createStatement();
-	    ResultSet lion_rs = stmt.executeQuery("SELECT lion_id FROM lion");
 
-	    while (lion_rs.next()) {
-	        String x = lion_rs.getString("lion_id");
-	        System.out.println(x);
-	    }
-	    
-	    Statement statement=con.createStatement();
-	    
-	    ResultSet rs2 = statement.executeQuery("SELECT shape FROM region");
-	    while (rs2.next()) {
-	    	//convert STRUCT into geometry
-	    	STRUCT st = (oracle.sql.STRUCT) rs2.getObject(1);
-	    	JGeometry j_geom = JGeometry.load(st);
-	    	//double point[]=j_geom.getPoint();
-	    	double point[]=j_geom.getOrdinatesArray();
-	    	for(int i=0;i<point.length;i++){
-	    		System.out.print(point[i]+" ");
-	    	}
-	    	System.out.println();
-		} 
-	}*/
-	
 	public static void main(String args[]) throws SQLException{
 		//connectToAndQueryDatabase("chris","123");
-		/*int data[][]={
-			{0,0,150,0,100,100,0,100},
-			{150,0,250,0,300,150,100,100},
-			{250,0,400,0,400,100,300,150},
-			{400,0,500,0,500,100,400,100},
-			{400,100,500,100,500,250,400,200},
-			{300,150,400,100,400,200,250,250},
-			{100,100,300,150,250,250,150,250},
-			{0,100,100,100,150,250,0,250},
-			{0,250,150,250,150,400,0,350},
-			{150,250,250,250,300,350,150,400},
-			{250,250,400,200,400,350,300,350},
-			{400,200,500,250,500,350,400,350},
-			{400,350,500,350,500,500,400,500},
-			{300,350,400,350,400,500,300,500},
-			{150,400,300,350,300,500,150,500},
-			{0,350,150,400,150,500,0,500}
-		};
-		Region[] region=new Region[16];
-		for(int i=0;i<data.length;i++){
-			region[i]=new Region("R"+i,4,data[i]);
-			//region[i].regi_id=new String("R1");
-			//region[i].vertice=4;
-			//region[i].shape=data[i];
-		}
-		for(int i=0;i<data.length;i++){
-			for(int j=0;j<data[i].length;j++){
-				System.out.println(region[i].regi_id+" "+region[i].vertice+" "+region[i].shape[j]+" ");
-			}
-			System.out.println("\n");
-		}*/
-		
-		
-		Draw draw=new Draw(600,600);
-		
-		
+		Draw draw=new Draw(517,583);
 	}
 }
