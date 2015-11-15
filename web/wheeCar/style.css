@@ -1,0 +1,152 @@
+	body{
+		padding:10px;
+		border: 1px solid blue;
+	}
+	#header{
+		padding:35px;
+	}
+	#brand_header{
+		float: left;
+	}
+	#log_in{
+		float: right;
+	}
+	#welcome{
+		float: right;
+	}
+	#front{
+		background-image: url("img/front.png");
+		background-repeat:no-repeat;
+		background-size:cover;
+		height:700px;
+
+	}
+	#font_cnt_div{
+		text-align:center;
+	}
+	#front_content{
+		font-size:350%;
+		color: rgb(253,101,52);
+	}
+	#font_btn_div{
+		text-align:center;
+		margin-top:300px;
+	}
+	#front_btn {
+		color:#ffffff;
+		background-color:rgb(51,153,254);
+		border-radius: 8px;
+		padding: 15px 55px;
+		font-size: 25px;
+		border: 1px solid transparent;
+	}
+	#move_car{
+		height:340px;
+		background-image: url("img/move_car.png");
+		background-repeat:no-repeat;
+		background-size:cover;
+	}
+	#options{
+		text-align:center;
+		margin-top:50px;
+		margin-bottom:30px;
+		color:rgb(38,128,240);
+		font-size:140%;
+	}
+	.panel-info>.panel-heading {
+		color: #ffffff;
+		background-color: rgb(242,100,43);
+		border-color: rgb(242,100,43);
+	}
+	.panel-body.option_desc{
+		font-size:64%;
+		text-align:left;
+		font-weight:bold;
+	}
+	.panel.panel-info.mypanel{
+		border-color: rgb(242,100,43);
+		border-left-width: 5px;
+		border-right-width: 5px;
+		border-top-width: 5px;
+		padding-bottom: 5px;
+		border-bottom-width: 5px;
+		border-radius:10px;
+	}
+	.opt_text {
+		margin: 0 0 50px;
+	}
+	
+	.carousel-inner > .item > img,
+	.carousel-inner > .item > a > img {
+		width: 70%;
+		margin: auto;
+	}	
+	.carousel-indicators .active{
+		background-color:rgb(242,100,34);
+		width: 20px;
+		height: 20px;
+		margin: 10px;
+	}
+	.carousel-indicators li{
+		border: 1px solid rgb(242,100,34);
+		width: 20px;
+		height: 20px;
+		margin: 10px;
+	}
+	
+	#data_container{
+		text-align:center;
+		background-image:url("img/world_map.png");
+		height:400px;
+	}
+	
+	
+	#data{
+		margin-top:100px;
+	}
+	#data_num{
+		font-size:50px;
+		color:rgb(242,100,34);
+	}
+	#data_desc{
+		font-size:30px;
+		color:rgb(51,153,254);
+	}
+	#footer_bg{
+		background:rgb(51,153,254);
+		height:200px;
+	}
+	.brand_footer{
+		margin-top:60px;
+	}
+	.footer_list
+	{
+		margin-top:30px;
+		list-style-type: none;
+		padding-left: 10px;
+	}
+	a.footer_link{
+		font-family:"sans-serif","Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+		color: #ffffff;
+		text-decoration: none;
+		font-size:20px;
+		font-weight:100;
+	}
+	.footer_list li{
+		margin-bottom:20px;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
