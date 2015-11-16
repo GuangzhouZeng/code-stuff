@@ -491,7 +491,7 @@ function showNextDays(info){
 	
 }
 function loadResult(str1,str2,str3,str4){
-	var url="myphp.php";
+	var url="http://weatherit-env.elasticbeanstalk.com/index.php";
 	url+="?street="+str1;
 	url+="&city="+str2;
 	url+="&state="+str3;

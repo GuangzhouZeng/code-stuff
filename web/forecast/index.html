@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- IE Edge Meta Tag -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<title>Forecast</title>
+	
+</head>
+<body>
+<!-- Open Layers2-->
+<script src="http://openlayers.org/api/OpenLayers.js"></script>
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- My JavaScript -->
+<script src="myjs.js"></script> 
+
+<div class="container">
+	<div id="header">
+		<h2>Forecast Search</h2>
+	</div>
+	<div >
+		<form align="center" class="form">
+		<div id="transbox">
+			<div id="formContent"  class="row">
+				<section class="col-md-3">
+					<span class="desc">Street Address:<span id="redStar"> *</span></span>
+					<p><input class="inputText" type="text" id="streetInput" name="Street" placeholder="Enter Street Address"></p>
+					<p id="streetWarning"></p>
+				</section>
+				<section class="col-md-2">
+					<span class="desc">City:<span id="redStar"> *</span></span>
+					<p><input class="inputText" type="text" id="cityInput" name="City" placeholder="Enter the city name" ></p>
+					<p id="cityWarning"></p>
+				</section>
+				<section class="col-md-2">
+					<span class="desc">State:<span id="redStar"> *</span></span>
+					<p ><select  id="stateInput" type="text" name="State" >
+							<option selected="selected">Select your State...</option>
+							<option>AL</option>
+							<option>AK</option>
+                            <option>AZ</option>
+                            <option>AR</option>
+                            <option>CA</option>
+                            <option>CO</option>
+                            <option>CT</option>
+                            <option>DE</option>
+                            <option>DC</option>
+                            <option>FL</option>
+                            <option>GA</option>
+                            <option>HI</option>
+                            <option>ID</option>
+                            <option>IL</option>
+                            <option>IN</option>
+                            <option>IA</option>
+                            <option>KS</option>
+                            <option>KY</option>
+                            <option>LA</option>
+                            <option>ME</option>
+                            <option>MD</option>
+                            <option>MA</option>
+                            <option>MI</option>
+                            <option>MN</option>
+                            <option>MS</option>
+                            <option>MO</option>
+                            <option>MT</option>
+                            <option>NE</option>
+                            <option>NV</option>
+                            <option>NH</option>
+                            <option>NJ</option>
+                            <option>NM</option>
+                            <option>NY</option>
+                            <option>NC</option>
+                            <option>ND</option>
+                            <option>OH</option>
+                            <option>OK</option>
+                            <option>OR</option>
+                            <option>PA</option>
+                            <option>RI</option>
+                            <option>SC</option>
+                            <option>SD</option>
+                            <option>TN</option>
+                            <option>TX</option>
+                            <option>UT</option>
+                            <option>VT</option>
+                            <option>VA</option>
+                            <option>WA</option>
+                            <option>WV</option>
+                            <option>WI</option>
+                            <option>WY</option>
+							
+					</select>
+					<p id="stateWarning"></p>
+					</p>
+				</section>
+				<section class="col-md-3">
+					<span class="desc">Degree:<span id="redStar"> *</span></span>
+					<p>
+						<input type="radio" name="Degree" checked value="Fahrenheit">Fahrenheit 
+						<input type="radio" name="Degree" value="Celsius">Celsius
+					</p>
+				</section>
+				<section class="col-md-2" style="padding-left: 1px;">
+					<div id="BtnPwb">
+					<section id="submitButton">
+						<button type="button" id="submitBtn" class="btn btn-primary btn-sm" onclick="clickSubmit()">
+							<span class="glyphicon glyphicon-search"></span>Search
+						</button>
+						<button type="button" id="submitBtn" class="btn btn-default btn-sm" onclick="clickClear()">
+							<span class="glyphicon glyphicon-refresh" ></span>Clear
+						</button>
+						<!--<input type="button" name="Submit" value="Search" onclick="clickSubmit()" width="20px">
+						<input type="button" name="Clear" value="Clear" onclick="clickClear()" width="20px">-->
+					</section>
+					<br>
+					<p id="PowerBy">
+					Powered by: 
+						<a href="http://forecast.io">
+							<img src="img/forecast_logo.png" alt="forecast.io" height="50%" width="50%">
+						</a>
+					</p>
+					</div>
+				</section>
+			</div>
+		</div>
+		</form>
+	</div>
+	<hr>
+	
+	<section id="resSection">
+	<!--here display the result-->
+	</section>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+<div class="clearfix"></div>
+
+<!-- Optional Theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Optional IE8 Support -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- FOOTER SECTION - Before closing </body> tag -->
+
