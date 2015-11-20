@@ -1,5 +1,5 @@
 	body{
-		padding:10px;
+		padding:-1px;
 	}
 	#header{
 		padding: 10px 10px 35px;
@@ -103,6 +103,8 @@
 	#data_container{
 		text-align:center;
 		background-image:url("img/world_map.png");
+		background-repeat:no-repeat;
+		background-size:cover;
 		/*height:400px;*/
 	}
 	
@@ -119,7 +121,8 @@
 		color:rgb(51,153,254);
 	}
 	#footer_bg{
-		background:rgb(51,153,254);
+		background:rgb(51,153,254);、
+		background-size:cover;
 	}
 	.brand_footer{
 		margin-top:60px;
@@ -140,8 +143,17 @@
 	.footer_list li{
 		margin-bottom:20px;
 	}
-	
-	
+	#sharebutton{
+		margin-top:30px;
+	}
+	.sharebutton{   
+		padding-top:40px;
+	}
+	.row{
+		margin-left:0px;
+		margin-right:0px;
+	}
+ 
 @media(max-width:768px) {
 	#footer_bg{
 		text-align:center;
@@ -166,7 +178,9 @@
 	#brand_header_img{
 		width:80%;
 	}
-	
+	.sharebutton{   
+		text-align:center;
+	}
 }
 	
 	
