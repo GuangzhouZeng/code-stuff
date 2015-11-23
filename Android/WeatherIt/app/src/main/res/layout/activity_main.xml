@@ -1,0 +1,188 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:background="@drawable/bg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/strTitle"
+        android:text="@string/str_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/strStreetId"
+        android:text="@string/str_street"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/strTitle"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editStrId"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/strStreetId"
+        android:layout_toEndOf="@+id/strStreetId"
+        android:layout_below="@+id/strTitle"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_city"
+        android:id="@+id/strCityId"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/strStreetId" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editCityId"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/strCityId"
+        android:layout_toEndOf="@+id/strCityId"
+        android:layout_below="@+id/editStrId"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="15dp"
+        android:inputType="text"
+        android:layout_alignLeft="@+id/editStrId"
+        android:layout_alignStart="@+id/editStrId" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_state"
+        android:id="@+id/strStateId"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/strCityId"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerState"
+        android:layout_below="@id/editCityId"
+        android:spinnerMode="dialog"
+        android:layout_marginTop="25dp"
+        android:layout_alignRight="@+id/editStrId"
+        android:layout_alignEnd="@+id/editStrId"
+        android:layout_alignLeft="@+id/editCityId"
+        android:layout_alignStart="@+id/editCityId"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_degree"
+        android:id="@+id/strDegreeId"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/strStateId" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:layout_toRightOf="@+id/strDegreeId"
+        android:layout_toEndOf="@+id/strDegreeId"
+        android:orientation="horizontal"
+        android:layout_below="@+id/spinnerState"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        >
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioFahrenheit"
+            android:text="@string/str_fahrenheit"
+            android:checked="true" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioCelsius"
+            android:text="@string/str_celsius"
+            />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEARCH"
+        android:id="@+id/btnSearch"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/radioGroup"
+        android:layout_toRightOf="@+id/strDegreeId"
+        android:layout_toEndOf="@+id/strDegreeId" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLEAR"
+        android:id="@+id/btnClear"
+        android:layout_alignTop="@+id/btnSearch"
+        android:layout_alignRight="@+id/strTitle"
+        android:layout_alignEnd="@+id/strTitle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/strWarning"
+        android:layout_below="@+id/btnSearch"
+        android:layout_toRightOf="@+id/strCityId"
+        android:layout_toEndOf="@+id/strCityId"
+        android:layout_marginTop="29dp"
+        android:textColor="#F00"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powered By:"
+        android:id="@+id/strPoweredBy"
+        android:layout_above="@+id/imgBtn_forecastio"
+        android:layout_alignLeft="@+id/imgBtn_forecastio"
+        android:layout_alignStart="@+id/imgBtn_forecastio"
+        android:textSize="20dp"/>
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:id="@+id/imgBtn_forecastio"
+        android:background="@drawable/forecast_logo"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_toLeftOf="@+id/btnClear"
+        android:layout_marginRight="20dp"
+        android:onClick="forecastIoClickHandler"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:id="@+id/btnAbout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:onClick="aboutClickHandler"/>
+
+
+
+</RelativeLayout>

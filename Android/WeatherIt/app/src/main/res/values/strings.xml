@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">WeatherIt</string>
+
+    <string name="str_title">Forecast Search</string>
+    <string name="str_street">Street</string>
+    <string name="str_city">City</string>
+    <string name="str_state">State</string>
+    <string name="str_degree">Degree</string>
+    <string name="str_fahrenheit">Fahrenheit</string>
+    <string name="str_celsius">Celsius</string>
+    <string name="str_about">Lorem ipsum dolor sit amet, pro no constituto scribentur, at nam putant molestiae urbanitas. Est et ignota petentium temporibus. Qui ad quot possim tacimates, iusto appetere vis ea. Causae periculis per an. An wisi iusto labores vel, in summo constituam quo. Ne ipsum pericula pri.
+Nihil epicuri eleifend vim cu. No mel veri velit, usu id autem blandit. Ut error everti mei, primis sapientem an mel. Mel natum utamur persius at, sint dolor ad mea. Eu sed idque liber atomorum. Ut vel case timeam fierent.
+Te duo quem expetenda. An omnium numquam est, his hinc quodsi verear id. In ius purto decore convenire, mel magna idque iuvaret at. Ne suas graeco causae sea. Ea usu erat vidit, albucius expetenda splendide has at, cum quis maluisset theophrastus eu.
+Reque minim accommodare eu nam. At officiis vulputate ius, sea minim fabellas laboramus ad. Pro ex oblique placerat. Ad placerat tacimates electram eos, summo honestatis ex pro. Sed nonumes probatus menandri at.
+At summo facete eam, aeque regione antiopam et sea. Reque possit ex sit. Ut saepe consequuntur nam, vivendum periculis ut pro, sea vidisse imperdiet eloquentiam ne. Lorem ipsum dolor sit amet, pro no constituto scribentur, at nam putant molestiae urbanitas. Est et ignota petentium temporibus. Qui ad quot possim tacimates, iusto appetere vis ea. Causae periculis per an. An wisi iusto labores vel, in summo constituam quo. Ne ipsum pericula pri.
+Nihil epicuri eleifend vim cu. No mel veri velit, usu id autem blandit. Ut error everti mei, primis sapientem an mel. Mel natum utamur persius at, sint dolor ad mea. Eu sed idque liber atomorum. Ut vel case timeam fierent.
+Te duo quem expetenda. An omnium numquam est, his hinc quodsi verear id. In ius purto decore convenire, mel magna idque iuvaret at. Ne suas graeco causae sea. Ea usu erat vidit, albucius expetenda splendide has at, cum quis maluisset theophrastus eu.
+Reque minim accommodare eu nam. At officiis vulputate ius, sea minim fabellas laboramus ad. Pro ex oblique placerat. Ad placerat tacimates electram eos, summo honestatis ex pro. Sed nonumes probatus menandri at.
+At summo facete eam, aeque regione antiopam et sea.Atomorum moderatius ei qui, ex cum invidunt inimicus elaboraret.</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_about_activity">AboutActivity</string>
+
+
+
+    <string-array name="state_array">
+        <item>Select</item>
+        <item>AL</item>
+        <item>AK</item>
+        <item>AZ</item>
+        <item>AR</item>
+        <item>CA</item>
+        <item>CO</item>
+        <item>CT</item>
+        <item>DE</item>
+        <item>DC</item>
+        <item>FL</item>
+        <item>GA</item>
+        <item>HI</item>
+        <item>ID</item>
+        <item>IL</item>
+        <item>IN</item>
+        <item>IA</item>
+        <item>KS</item>
+        <item>KY</item>
+        <item>LA</item>
+        <item>ME</item>
+        <item>MD</item>
+        <item>MA</item>
+        <item>MI</item>
+        <item>MN</item>
+        <item>MS</item>
+        <item>MO</item>
+        <item>MT</item>
+        <item>NE</item>
+        <item>NV</item>
+        <item>NH</item>
+        <item>NJ</item>
+        <item>NM</item>
+        <item>NY</item>
+        <item>NC</item>
+        <item>ND</item>
+        <item>OH</item>
+        <item>OK</item>
+        <item>OR</item>
+        <item>PA</item>
+        <item>RI</item>
+        <item>SC</item>
+        <item>SD</item>
+        <item>TN</item>
+        <item>TX</item>
+        <item>UT</item>
+        <item>VT</item>
+        <item>VA</item>
+        <item>WA</item>
+        <item>WV</item>
+        <item>WI</item>
+        <item>WY</item>
+    </string-array>
+    <string name="title_activity_result">ResultActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>
