@@ -42,13 +42,226 @@
         android:id="@+id/scrollView2"
         android:layout_below="@+id/imgBtnFacebook">
 
-        <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/test"
-            android:layout_alignParentTop="true"
-            android:layout_alignRight="@+id/btnMore"
-            android:layout_alignEnd="@+id/btnMore" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:gravity="center"
+                android:layout_marginTop="15dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/imgViewIcon"
+                    android:src="@drawable/clear"
+                    android:contentDescription="@string/contDescWeatherIcon" />
+
+            </TableRow>
+            <TableRow
+                android:gravity="center"
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Clear in Los Angeles, CA"
+                    android:id="@+id/textViewSummary" />
+            </TableRow>
+
+            <TableRow
+                android:gravity="center"
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="68 C"
+                    android:id="@+id/textViewTemp"
+                    android:gravity="center"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:gravity="center"
+                android:layout_marginTop="15dp">
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L: 48 | H: 71"
+                    android:id="@+id/textViewMinTMaxT"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precipitationText"
+                    android:id="@+id/textViewPrecipitation"
+                    android:layout_gravity="start"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="12345"
+                    android:id="@+id/textViewPrecipitationVal"
+                    android:gravity="end"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chanceOfRainText"
+                    android:id="@+id/textViewChanceOfRain"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/textViewChanceOfRainVal"
+                    android:gravity="end"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/windSpeedText"
+                    android:id="@+id/textViewWindSpeed"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="ws"
+                    android:id="@+id/textViewWindSpeedVal"
+                    android:gravity="end"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dewPointText"
+                    android:id="@+id/textViewDewPoint"
+                    android:gravity="start"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="dp"
+                    android:id="@+id/textViewDewPointVal"
+                    android:gravity="end"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/humidityText"
+                    android:id="@+id/textViewHumidity"
+                    android:gravity="start"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="hum"
+                    android:id="@+id/textViewHumidityVal"
+                    android:gravity="end"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/visibilityText"
+                    android:id="@+id/textViewVisibility"
+                    android:gravity="start"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="visi"
+                    android:id="@+id/textViewVisibilityVal"
+                    android:gravity="end"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sunriseText"
+                    android:id="@+id/textViewSunrise"
+                    android:gravity="start"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="sunri"
+                    android:id="@+id/textViewSunriseVal"
+                    android:gravity="end"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sunsetText"
+                    android:id="@+id/textViewSunset"
+                    android:gravity="start"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="sunset"
+                    android:id="@+id/textViewSunsetVal"
+                    android:gravity="end"
+                    android:layout_weight="1" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 
 
-        </ScrollView>
+
+
 </RelativeLayout>

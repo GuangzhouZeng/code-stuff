@@ -1,0 +1,314 @@
+{
+	"latitude": 34.0153861,
+	"longitude": -118.461825,
+	"timezone": "America\/Los_Angeles",
+	"offset": -8,
+	"currently": {
+		"time": 1448305697,
+		"summary": "Clear",
+		"icon": "clear-day",
+		"nearestStormDistance": 58,
+		"nearestStormBearing": 340,
+		"precipIntensity": 0,
+		"precipProbability": 0,
+		"temperature": 73.72,
+		"apparentTemperature": 73.72,
+		"dewPoint": 40.68,
+		"humidity": 0.3,
+		"windSpeed": 3.53,
+		"windBearing": 165,
+		"visibility": 10,
+		"cloudCover": 0.02,
+		"pressure": 1013.79,
+		"ozone": 266.13
+	},
+	"minutely": {
+		"summary": "Clear for the hour.",
+		"icon": "clear-day",
+		"data": [{
+			"time": 1448305680,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448305740,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448305800,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448305860,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448305920,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448305980,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306040,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306100,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306160,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306220,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306280,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306340,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306400,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306460,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306520,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306580,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306640,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306700,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306760,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306820,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306880,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448306940,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307000,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307060,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307120,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307180,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307240,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307300,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307360,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307420,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307480,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307540,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307600,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307660,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307720,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307780,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307840,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307900,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448307960,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308020,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308080,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308140,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308200,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308260,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308320,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308380,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308440,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308500,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308560,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308620,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308680,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308740,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308800,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308860,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308920,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448308980,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 1448309040,
+			"precipIntensity": 0,
+			"precipProbability": 0
+		},
+		{
+			"time": 14

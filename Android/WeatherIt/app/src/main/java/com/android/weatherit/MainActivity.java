@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,6 +25,9 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -63,9 +67,6 @@ public class MainActivity extends Activity {
         final EditText cityET = (EditText) findViewById(R.id.editCityId);
         final Spinner stateSp = (Spinner) findViewById(R.id.spinnerState);
         final RadioGroup degreeRG=(RadioGroup) findViewById(R.id.radioGroup);
-        final RadioButton degreeBtn=(RadioButton) findViewById(degreeRG.getCheckedRadioButtonId());
-
-
 
         searchBtn.setOnClickListener(
                 new View.OnClickListener() {
@@ -74,6 +75,7 @@ public class MainActivity extends Activity {
                         streetVal=streetET.getText().toString();
                         cityVal=cityET.getText().toString();
                         stateVal=stateSp.getSelectedItem().toString();
+                        RadioButton degreeBtn=(RadioButton) findViewById(degreeRG.getCheckedRadioButtonId());
                         degreeVal=degreeBtn.getText().toString();
 
                         TextView warningTV = (TextView) findViewById(R.id.strWarning);
@@ -84,7 +86,6 @@ public class MainActivity extends Activity {
                         }else if(stateVal.equals("Select")){
                             warningTV.setText("Please enter a State Address ");
                         }else {
-                           // http://weatherit-env.elasticbeanstalk.com/index.php?street
                             try {
                                 streetVal= URLEncoder.encode(streetVal,"utf-8");
                                 cityVal=URLEncoder.encode(cityVal,"utf-8");
@@ -160,17 +161,16 @@ public class MainActivity extends Activity {
             }else {
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 intent.putExtra("jsonResult", result);
+                intent.putExtra("streetVal",streetVal);
+                intent.putExtra("cityVal",cityVal);
+                intent.putExtra("stateVal",stateVal);
+                intent.putExtra("degreeVal",degreeVal);
                 startActivity(intent);
             }
         }
 
         private boolean isNetworkAvailable() {
             Log.d(LOG_TAG,"in isNetworkAvailable");
-            /*ConnectivityManager connectivityManager1
-                    = (ConnectivityManager) getSystemService(MainActivity.this.CONNECTIVITY_SERVICE);*/
-            //NetworkInfo activeNetworkInfo = connectivityManager1.getActiveNetworkInfo();
-           // return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-
             ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
             return activeNetworkInfo!=null && activeNetworkInfo.isConnected();

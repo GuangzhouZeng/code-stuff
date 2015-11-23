@@ -9,4 +9,5 @@ ctrl+F11: rotate
 alt+enter: automaticaly create handler
 ctrl+alt+l: reformat
 ctrl+/: comment out a block
-ctrl+D: duplicate code
+ctrl+d: duplicate code
+ctrl+x: delete the whole line

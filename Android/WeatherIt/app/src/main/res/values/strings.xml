@@ -79,4 +79,13 @@ At summo facete eam, aeque regione antiopam et sea.Atomorum moderatius ei qui, e
     <string name="title_activity_result">ResultActivity</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="contDescWeatherIcon">weather icon</string>
+    <string name="precipitationText">Precipitation</string>
+    <string name="chanceOfRainText">Chance of Rain</string>
+    <string name="windSpeedText">Wind Speed</string>
+    <string name="dewPointText">Dew Point</string>
+    <string name="humidityText">Humidity</string>
+    <string name="visibilityText">Visibility</string>
+    <string name="sunriseText">Sunrise</string>
+    <string name="sunsetText">Sunset</string>
 </resources>
