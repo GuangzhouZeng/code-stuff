@@ -163,8 +163,9 @@ public class MainActivity extends Activity {
                 intent.putExtra("jsonResult", result);
                 intent.putExtra("streetVal",streetVal);
                 intent.putExtra("cityVal",cityVal);
-                intent.putExtra("stateVal",stateVal);
-                intent.putExtra("degreeVal",degreeVal);
+                intent.putExtra("stateVal", stateVal);
+                intent.putExtra("degreeVal", degreeVal);
+
                 startActivity(intent);
             }
         }

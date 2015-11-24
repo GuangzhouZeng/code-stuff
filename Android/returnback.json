@@ -1,314 +1,314 @@
-{
-	"latitude": 34.0153861,
-	"longitude": -118.461825,
+11-2320: 07: 44.1132390-2390/?D/MainActivity﹕result: {
+	"latitude": 34.0174044,
+	"longitude": -118.2266418,
 	"timezone": "America\/Los_Angeles",
 	"offset": -8,
 	"currently": {
-		"time": 1448305697,
+		"time": 1448327412,
 		"summary": "Clear",
-		"icon": "clear-day",
-		"nearestStormDistance": 58,
-		"nearestStormBearing": 340,
+		"icon": "clear-night",
+		"nearestStormDistance": 23,
+		"nearestStormBearing": 22,
 		"precipIntensity": 0,
 		"precipProbability": 0,
-		"temperature": 73.72,
-		"apparentTemperature": 73.72,
-		"dewPoint": 40.68,
-		"humidity": 0.3,
-		"windSpeed": 3.53,
-		"windBearing": 165,
-		"visibility": 10,
-		"cloudCover": 0.02,
-		"pressure": 1013.79,
-		"ozone": 266.13
+		"temperature": 20.93,
+		"apparentTemperature": 20.93,
+		"dewPoint": 8.15,
+		"humidity": 0.44,
+		"windSpeed": 2.34,
+		"windBearing": 241,
+		"visibility": 16.01,
+		"cloudCover": 0.08,
+		"pressure": 1012.23,
+		"ozone": 260.76
 	},
 	"minutely": {
 		"summary": "Clear for the hour.",
-		"icon": "clear-day",
+		"icon": "clear-night",
 		"data": [{
-			"time": 1448305680,
+			"time": 1448327400,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448305740,
+			"time": 1448327460,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448305800,
+			"time": 1448327520,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448305860,
+			"time": 1448327580,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448305920,
+			"time": 1448327640,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448305980,
+			"time": 1448327700,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306040,
+			"time": 1448327760,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306100,
+			"time": 1448327820,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306160,
+			"time": 1448327880,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306220,
+			"time": 1448327940,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306280,
+			"time": 1448328000,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306340,
+			"time": 1448328060,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306400,
+			"time": 1448328120,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306460,
+			"time": 1448328180,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306520,
+			"time": 1448328240,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306580,
+			"time": 1448328300,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306640,
+			"time": 1448328360,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306700,
+			"time": 1448328420,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306760,
+			"time": 1448328480,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306820,
+			"time": 1448328540,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306880,
+			"time": 1448328600,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448306940,
+			"time": 1448328660,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307000,
+			"time": 1448328720,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307060,
+			"time": 1448328780,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307120,
+			"time": 1448328840,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307180,
+			"time": 1448328900,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307240,
+			"time": 1448328960,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307300,
+			"time": 1448329020,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307360,
+			"time": 1448329080,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307420,
+			"time": 1448329140,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307480,
+			"time": 1448329200,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307540,
+			"time": 1448329260,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307600,
+			"time": 1448329320,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307660,
+			"time": 1448329380,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307720,
+			"time": 1448329440,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307780,
+			"time": 1448329500,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307840,
+			"time": 1448329560,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307900,
+			"time": 1448329620,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448307960,
+			"time": 1448329680,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308020,
+			"time": 1448329740,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308080,
+			"time": 1448329800,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308140,
+			"time": 1448329860,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308200,
+			"time": 1448329920,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308260,
+			"time": 1448329980,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308320,
+			"time": 1448330040,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308380,
+			"time": 1448330100,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308440,
+			"time": 1448330160,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308500,
+			"time": 1448330220,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308560,
+			"time": 1448330280,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308620,
+			"time": 1448330340,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308680,
+			"time": 1448330400,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308740,
+			"time": 1448330460,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308800,
+			"time": 1448330520,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308860,
+			"time": 1448330580,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308920,
+			"time": 1448330640,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448308980,
+			"time": 1448330700,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 1448309040,
+			"time": 1448330760,
 			"precipIntensity": 0,
 			"precipProbability": 0
 		},
 		{
-			"time": 14
+			"t

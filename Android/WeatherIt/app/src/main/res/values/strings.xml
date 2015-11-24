@@ -77,6 +77,7 @@ At summo facete eam, aeque regione antiopam et sea.Atomorum moderatius ei qui, e
         <item>WY</item>
     </string-array>
     <string name="title_activity_result">ResultActivity</string>
+    <string name="title_activity_details">DetailActivity</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="contDescWeatherIcon">weather icon</string>

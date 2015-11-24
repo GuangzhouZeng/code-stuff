@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +58,20 @@ public class ResultActivity extends Activity {
         }
 
         displayCurrent();
+
+        Button moreDetailsBtn = (Button) findViewById(R.id.btnMore);
+        Button viewMapBtn = (Button) findViewById(R.id.btnMap);
+        ImageButton facebookImgBtn = (ImageButton) findViewById(R.id.imgBtnFacebook);
+
+        moreDetailsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ResultActivity.this, DetailsActivity.class);
+                intent.putExtra("jsonResult",result);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void displayCurrent() {
@@ -62,7 +79,7 @@ public class ResultActivity extends Activity {
         TextView tvSumm= (TextView) findViewById(R.id.textViewSummary);
         TextView tvTemp= (TextView) findViewById(R.id.textViewTemp);
         TextView tvMinMax= (TextView) findViewById(R.id.textViewMinTMaxT);
-        
+
         TextView tvPrec= (TextView) findViewById(R.id.textViewPrecipitationVal);
         TextView tvChan= (TextView) findViewById(R.id.textViewChanceOfRainVal);
         TextView tvWind= (TextView) findViewById(R.id.textViewWindSpeedVal);
@@ -73,23 +90,29 @@ public class ResultActivity extends Activity {
         TextView tvSuns= (TextView) findViewById(R.id.textViewSunsetVal);
 
 
-        tvPrec.setText(precIn);
-        tvChan.setText(precPr);
-        tvWind.setText(windSpeed);
-        tvDewP.setText(dewPoint);
-        tvHumi.setText(humidity);
-        tvVisi.setText(visibility);
-        tvSunr.setText(sunrise);
-        tvSuns.setText(sunset);
+        ivIcon.setImageResource(convertData.convertIcon(this, sumIcon));
+        tvSumm.setText(convertData.convertSummary(summary, cityVal, stateVal));
+        tvTemp.setText(convertData.convertTemp(temper, degreeVal));
+        tvMinMax.setText(convertData.convertMinMax(minT,maxT));
+
+        tvPrec.setText(convertData.convertPrecipitation(precIn));
+        tvChan.setText(convertData.convertChanceOfRain(precPr));
+        tvWind.setText(convertData.convertWindSpeed(windSpeed,degreeVal));
+        tvDewP.setText(convertData.convertDewPoint(dewPoint,degreeVal));
+        tvHumi.setText(convertData.convertHumidity(humidity));
+        tvVisi.setText(convertData.convertVisibility(visibility,degreeVal));
+        tvSunr.setText(convertData.convertTime(sunrise,timezone));
+        tvSuns.setText(convertData.convertTime(sunset,timezone));
     }
 
     protected void extractData() throws JSONException {
         //extract data from MainActivity
         Intent intent=getIntent();
         result=intent.getStringExtra("jsonResult");
-        cityVal=intent.getStringExtra("cityVal");
+        //cityVal=intent.getStringExtra("cityVal");
         stateVal=intent.getStringExtra("stateVal");
         degreeVal=intent.getStringExtra("degreeVal");
+
 
         //extract data from json current
         JSONObject jsonObject = new JSONObject(result);
@@ -113,6 +136,10 @@ public class ResultActivity extends Activity {
         maxT=jaData.getJSONObject(0).getString("temperatureMax");
         sunrise=jaData.getJSONObject(0).getString("sunriseTime");
         sunset=jaData.getJSONObject(0).getString("sunsetTime");
+
+        //get cityVal
+        cityVal=timezone.replace("America/", "");
+        cityVal=cityVal.replace("_", " ");
 
     }
 

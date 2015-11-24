@@ -28,8 +28,8 @@
 
 
     <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/imgBtnFacebook"
         android:background="@drawable/fb_icon"
         android:layout_alignParentTop="true"
@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/scrollView2"
-        android:layout_below="@+id/imgBtnFacebook">
+        android:layout_below="@+id/btnMap">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -65,7 +65,8 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Clear in Los Angeles, CA"
-                    android:id="@+id/textViewSummary" />
+                    android:id="@+id/textViewSummary"
+                    android:gravity="center"/>
             </TableRow>
 
             <TableRow
