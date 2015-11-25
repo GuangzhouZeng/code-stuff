@@ -14,7 +14,46 @@
 
 </head>
 <body >
-<div>
+<div class="container-fluid">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">
+		<img id="brand_header_img" src="img/brand_header.png">
+	  </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about"><img src="img/log_in.png"> Log out</a></li>
+        <li><a href="#services">Buy</a></li>
+        <li><a href="#portfolio">How it works</a></li>
+        <li><a href="#pricing">Love Stories</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div id="header" >
+	<div id="log" >
+		<div id="log_in" ><img src="img/log_in.png"> Log Out</div>
+		<br><br>		
+		<div id="welcome" >
+			<p >Welcome, Ralph Tao!</p>
+		</div>
+	</div>
+</div>
+
+	
+
+
+
+<!--
 	<div id="header">
 		<div id="brand_header" >
 			<img  id="brand_header_img" src="img/brand_header.png">
@@ -27,6 +66,8 @@
 			</div>
 		</div>
 	</div>
+	-->
+	
 	
 	<div id="front">
 		<div id="font_cnt_div">
@@ -279,13 +320,13 @@ function move(value,mode){
 	if(s<parseInt(endPoint)){
 	
 	//s = 0;//parseInt(oSpan.innerHTML);//起始位置
-	var time=2000;  //所用时间 1000毫秒（ 在1秒内 数值增加到d）;
+	var time=1000;  //所用时间 1000毫秒（ 在1秒内 数值增加到d）;
 	var outTime=0;  //所消耗的时间
 	var interTime=30;
 	var i=10;
 	var timer = setInterval(function(){
 		outTime+=interTime;
-		i=i+0.5;
+		i=i+0.9;
 		if(outTime<time){
 			switch(mode){
 				case 1: $("#data1").text(numberWithCommas(parseInt(endPoint/time*outTime)));break;

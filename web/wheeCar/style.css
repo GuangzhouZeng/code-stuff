@@ -2,16 +2,29 @@
 		padding:-1px;
 	}
 	#header{
-		padding: 10px 10px 35px;
-		margin-bottom:20px;
+		padding-top: 20px;
+		padding-right:10px;
 		color: rgb(51,153,254);
+		background-color:#f8f8f8;
+		height:110px;
 	}
 	#brand_header{
 		float: left;
 	}
-	#brand_header_img{
-		padding:10px;
+	.navbar-brand{
+		padding:0px;
 	}
+	.navbar-default{
+		border-color:#f8f8f8;
+	}
+	.navbar-default .navbar-nav>li>a{
+		color: rgb(51,153,254);
+	}
+	
+	.container-fluid{
+		padding:0px;
+	}
+	
 	#log_in{
 		float: right;
 	}
@@ -152,10 +165,6 @@
 	.row{
 		margin-left:0px;
 		margin-right:0px;
-	}
-	img:hover{
-		transition: box-shadow 0.5s;
-		box-shadow: 5px 0px 40px rgba(0,0,0, .2);
 	}
 	.panel:hover {
 		transition: box-shadow 0.5s;
