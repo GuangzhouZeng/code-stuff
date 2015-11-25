@@ -112,8 +112,8 @@
 	#data{
 		margin-top:100px;
 	}
-	#data_num{
-		font-size:50px;
+	.data_num{
+		font-size:10px;
 		color:rgb(242,100,34);
 	}
 	#data_desc{
@@ -153,7 +153,14 @@
 		margin-left:0px;
 		margin-right:0px;
 	}
- 
+	img:hover{
+		transition: box-shadow 0.5s;
+		box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+	}
+	.panel:hover {
+		transition: box-shadow 0.5s;
+		box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+	}
 @media(max-width:768px) {
 	#footer_bg{
 		text-align:center;

@@ -10,10 +10,11 @@
 	<!-- Minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	
+	<link rel="icon" type="image/png" id="favicon" href="img/test.ico"/>
+
 </head>
-<body>
-<div >
+<body >
+<div>
 	<div id="header">
 		<div id="brand_header" >
 			<img  id="brand_header_img" src="img/brand_header.png">
@@ -74,7 +75,7 @@
 			</div>
 		</div>
 	</div>
-	
+	<div id="number_change">
 	<div id="container  gallery">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
@@ -134,27 +135,28 @@
 	</div>
 	</div>
 	
+	
 	<div id="data_container" class="row">
 	<div id="data">
 		<div class="col-sm-6 col-md-3">
 			<img src="img/data1.png" width="100px">
-			<h2 id="data_num">2,000</h2>
+			<h2 class="data_num" id="data1" >2,000</h2>
 			<h4 id="data_desc">cars available right now</h4>
 		</div>
 		<div class="col-sm-6 col-md-3">
 			<img src="img/data2.png" width="100px">
-			<h2 id="data_num">100%</h2>
+			<h2 class="data_num" id="data2">90%</h2>
 			<h4 id="data_desc">customer satisfaction</h4>
 		</div>
 		<div class="clearfix visible-sm-block" ></div>
 		<div class="col-sm-6 col-md-3">
 			<img src="img/data3.png" width="100px">
-			<h2 id="data_num">1,500,000</h2>
+			<h2 class="data_num" id="data3">1,500,000</h2>
 			<h4 id="data_desc">transation amount</h4>
 		</div>
 		<div class="col-sm-6 col-md-3">
 			<img src="img/data4.png" width="100px">
-			<h2 id="data_num">260</h2>
+			<h2 class="data_num" id="data4">250</h2>
 			<h4 id="data_desc">transactions</h4>
 		</div>
 	</div>
@@ -212,11 +214,108 @@
 			<a class="a2a_button_linkedin"></a>
 		</div>	
 	</div>
-<div>
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+    $("#number_change").mouseenter(function(){
+	
+		move(2001,1);
+		move(100,2);
+		move(1600000,3);
+		move(300,4);
+		
+		
+    });
+});
+/*
+function move(value){
+	var oSpan=document.getElementById("data1");
+	var s=parseInt(oSpan.innerHTML);
+	var d=value;//结束的位置
+	if(s<parseInt(d)){
+	
+	s= 0;//parseInt(oSpan.innerHTML);//起始位置
+	var time=1000;  //所用时间 1000毫秒（ 在1秒内 数值增加到d）;
+	var outTime=0;  //所消耗的时间
+	var interTime=30;
+	var timer = setInterval(function(){
+		outTime+=interTime;
+		if(outTime<time){
+			oSpan.innerHTML= numberWithCommas(parseInt(d/time*outTime));
+		}else{
+			oSpan.innerHTML=numberWithCommas(d);
+		}
+		},interTime);
+	}
+}
+*/
+function numberWithCommas(x) { //comma
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function numberWithoutCommas(x){
+	return x.replace(/,/g,"");
+}
+function numberWithPercentage(x) {
+	return x.toString()+"%";
+}
+
+//input: the value current is
+function move(value,mode){
+	var s; 
+	switch(mode){
+		case 1:s=$("#data1").text();s=numberWithoutCommas(s);break
+		case 2:s=$("#data2").text();s=s.replace("%","");break;
+		case 3:s=$("#data3").text();s=numberWithoutCommas(s);break;
+		case 4:s=$("#data4").text();s=numberWithoutCommas(s);break;
+	}
+	s=parseInt(s);
+	var endPoint=value;//end point
+	if(s<parseInt(endPoint)){
+	
+	//s = 0;//parseInt(oSpan.innerHTML);//起始位置
+	var time=2000;  //所用时间 1000毫秒（ 在1秒内 数值增加到d）;
+	var outTime=0;  //所消耗的时间
+	var interTime=30;
+	var i=10;
+	var timer = setInterval(function(){
+		outTime+=interTime;
+		i=i+0.5;
+		if(outTime<time){
+			switch(mode){
+				case 1: $("#data1").text(numberWithCommas(parseInt(endPoint/time*outTime)));break;
+				case 2: $("#data2").text(numberWithPercentage(parseInt(endPoint/time*outTime)));break;
+				case 3: $("#data3").text(numberWithCommas(parseInt(endPoint/time*outTime)));break;
+				case 4: $("#data4").text(numberWithCommas(parseInt(endPoint/time*outTime)));break;
+			}
+			$(".data_num").css({"font-size": "0"+i+"px"});
+			//$("#data1").text(numberWithCommas(parseInt(endPoint/time*outTime)));
+		}else{
+			switch(mode){
+				case 1: $("#data1").text(numberWithCommas(endPoint));break;
+				case 2: $("#data2").text(numberWithPercentage(endPoint));break;
+				case 3: $("#data3").text(numberWithCommas(endPoint));break;
+				case 4: $("#data4").text(numberWithCommas(endPoint));break;				
+			}
+			//$("#data1").text(numberWithCommas(endPoint));
+		}
+		},interTime);
+	}
+}
+
+
+
+</script>
 
 
 
 <!-- AddToAny BEGIN -->
+<!--
 <script type="text/javascript">
 var a2a_config = a2a_config || {};
 a2a_config.icon_color = "#3399fe";
@@ -224,12 +323,7 @@ var a2a_config = a2a_config || {};
 a2a_config.prioritize = ["google_plus", "facebook", "linkedin", "twitter"];
 </script>
 <script type="text/javascript" src="page.js"></script>
-<!-- AddToAny END -->
-</div>	
-	
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+-->
 <noscript>
 </body>
 </html>
