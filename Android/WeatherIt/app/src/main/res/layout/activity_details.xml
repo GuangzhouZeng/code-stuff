@@ -1,47 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DetailsAvtivity"
-        android:id="@+id/textView3" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="More Details For Los Angeles, CA"
+        android:id="@+id/TextViewDetailSymmary"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"/>
 
-    <TabHost
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tabHost">
+        android:text="NEXT 24 HOURS"
+        android:id="@+id/btn24Hours"
+        android:layout_below="@+id/TextViewDetailSymmary"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"/>
 
-        <LinearLayout
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEXT 7 Days"
+        android:id="@+id/btn7Days"
+        android:layout_alignBottom="@+id/btn24Hours"
+        android:layout_toRightOf="@+id/btn24Hours"/>
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btn24Hours"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layout24Hours">
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRowHeader"
+            android:background="@color/light_blue"
+            android:padding="10dp">
 
-            <TabWidget
-                android:id="@android:id/tabs"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Time"
+                android:id="@+id/headerTime"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Summary"
+                android:id="@+id/headerSummary"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Temp(\u2109)"
+                android:id="@+id/headerTemp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textColor="@color/white"/>
+
+        </TableRow>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView24Content"
+            android:layout_below="@+id/tableRowHeader">
+            <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></TabWidget>
+                android:layout_height="wrap_content"
+                android:id="@+id/tableRow24Content">
 
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            </TableLayout>
+        </ScrollView>
 
-                <LinearLayout
-                    android:id="@+id/tab1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/tab2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
 
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
-</LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btn24Hours"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layout7Days">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:id="@+id/textView4"
+            android:layout_alignParentRight="true"/>
+
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

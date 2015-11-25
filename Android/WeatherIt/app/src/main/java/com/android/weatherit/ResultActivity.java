@@ -2,22 +2,17 @@ package com.android.weatherit;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 
 public class ResultActivity extends Activity {
@@ -50,6 +45,8 @@ public class ResultActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        DataManagement data= DataManagement.getINSTANCE();
+        Log.d(LOG_TAG,"testHere: "+data.getResult());
         try {//extract data here
             extractData();
             testData();  //test here
@@ -67,7 +64,7 @@ public class ResultActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ResultActivity.this, DetailsActivity.class);
-                intent.putExtra("jsonResult",result);
+                //intent.putExtra("jsonResult",result);
                 startActivity(intent);
             }
         });
@@ -90,25 +87,26 @@ public class ResultActivity extends Activity {
         TextView tvSuns= (TextView) findViewById(R.id.textViewSunsetVal);
 
 
-        ivIcon.setImageResource(convertData.convertIcon(this, sumIcon));
-        tvSumm.setText(convertData.convertSummary(summary, cityVal, stateVal));
-        tvTemp.setText(convertData.convertTemp(temper, degreeVal));
-        tvMinMax.setText(convertData.convertMinMax(minT,maxT));
+        ivIcon.setImageResource(DataManagement.convertIcon(this, sumIcon));
+        tvSumm.setText(DataManagement.convertSummary(summary, cityVal, stateVal));
+        tvTemp.setText(DataManagement.convertTemp(temper, degreeVal));
+        tvMinMax.setText(DataManagement.convertMinMax(minT, maxT));
 
-        tvPrec.setText(convertData.convertPrecipitation(precIn));
-        tvChan.setText(convertData.convertChanceOfRain(precPr));
-        tvWind.setText(convertData.convertWindSpeed(windSpeed,degreeVal));
-        tvDewP.setText(convertData.convertDewPoint(dewPoint,degreeVal));
-        tvHumi.setText(convertData.convertHumidity(humidity));
-        tvVisi.setText(convertData.convertVisibility(visibility,degreeVal));
-        tvSunr.setText(convertData.convertTime(sunrise,timezone));
-        tvSuns.setText(convertData.convertTime(sunset,timezone));
+        tvPrec.setText(DataManagement.convertPrecipitation(precIn));
+        tvChan.setText(DataManagement.convertChanceOfRain(precPr));
+        tvWind.setText(DataManagement.convertWindSpeed(windSpeed, degreeVal));
+        tvDewP.setText(DataManagement.convertDewPoint(dewPoint, degreeVal));
+        tvHumi.setText(DataManagement.convertHumidity(humidity));
+        tvVisi.setText(DataManagement.convertVisibility(visibility, degreeVal));
+        tvSunr.setText(DataManagement.convertTime(sunrise, timezone));
+        tvSuns.setText(DataManagement.convertTime(sunset, timezone));
     }
 
     protected void extractData() throws JSONException {
         //extract data from MainActivity
         Intent intent=getIntent();
-        result=intent.getStringExtra("jsonResult");
+        result= DataManagement.getResult();
+        //result=intent.getStringExtra("jsonResult");
         //cityVal=intent.getStringExtra("cityVal");
         stateVal=intent.getStringExtra("stateVal");
         degreeVal=intent.getStringExtra("degreeVal");

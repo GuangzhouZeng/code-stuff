@@ -1,21 +1,16 @@
 package com.android.weatherit;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.JsonReader;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -25,9 +20,6 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -67,6 +59,7 @@ public class MainActivity extends Activity {
         final EditText cityET = (EditText) findViewById(R.id.editCityId);
         final Spinner stateSp = (Spinner) findViewById(R.id.spinnerState);
         final RadioGroup degreeRG=(RadioGroup) findViewById(R.id.radioGroup);
+        final TextView warningTV = (TextView) findViewById(R.id.strWarning);
 
         searchBtn.setOnClickListener(
                 new View.OnClickListener() {
@@ -78,7 +71,7 @@ public class MainActivity extends Activity {
                         RadioButton degreeBtn=(RadioButton) findViewById(degreeRG.getCheckedRadioButtonId());
                         degreeVal=degreeBtn.getText().toString();
 
-                        TextView warningTV = (TextView) findViewById(R.id.strWarning);
+
                         if(streetVal.length()==0){
                             warningTV.setText("Please enter a Street Address");
                         }else if(cityVal.length()==0){
@@ -114,6 +107,7 @@ public class MainActivity extends Activity {
                         streetET.setText("");
                         cityET.setText("");
                         stateSp.setSelection(0);
+                        warningTV.setText("");
                         RadioButton fahrenheitRB= (RadioButton) findViewById(R.id.radioFahrenheit);
                         fahrenheitRB.setChecked(true);
                     }
@@ -129,7 +123,7 @@ public class MainActivity extends Activity {
 
         @Override
         protected void onPreExecute(){
-            Log.d(LOG_TAG,"in PreExecute");
+            Log.d(LOG_TAG, "in PreExecute");
             progressDialog=progressDialog.show(MainActivity.this,"","Loading...",true,true);
             if(!isNetworkAvailable()){
                 Log.d(LOG_TAG,"in PreExecute if");
@@ -142,12 +136,25 @@ public class MainActivity extends Activity {
             try {
                 Log.d(LOG_TAG,"url in backgroud:"+url[0]);
                 jsonString = getJsonFromServer(url[0]);
+                progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialogInterface) {
+                        Log.d(LOG_TAG,"what is this");
+                        cancel(true);
+                    }
+                });
+                if (isCancelled()) return null;
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            if (isCancelled()) return null;
-            Log.d(LOG_TAG, "in doInBackground2");
+
+            Log.d(LOG_TAG, "in doInBackground2 jsonString:"+jsonString);
             return jsonString;
+        }
+
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
         }
 
         @Override
@@ -159,8 +166,12 @@ public class MainActivity extends Activity {
                 Log.d(LOG_TAG,"result in if:"+result);
                 Toast.makeText(MainActivity.this,"Please try again latter",Toast.LENGTH_SHORT).show();
             }else {
+                Log.d(LOG_TAG, "result in else:" + result);
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
-                intent.putExtra("jsonResult", result);
+                //intent.putExtra("jsonResult", result); don't need this any more
+                DataManagement instance= DataManagement.getINSTANCE();
+                instance.setResult(result);
+
                 intent.putExtra("streetVal",streetVal);
                 intent.putExtra("cityVal",cityVal);
                 intent.putExtra("stateVal", stateVal);
@@ -194,8 +205,7 @@ public class MainActivity extends Activity {
                 result+=temp;
                 Log.d(LOG_TAG,"temp:"+temp);
             }
-
-            Log.d(LOG_TAG,"result:"+result);
+            Log.d(LOG_TAG, "result:"+result);
             return result;
         }
     }
