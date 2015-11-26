@@ -29,6 +29,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+
 public class MainActivity extends Activity {
 
     private String awsPhpUrl="http://weatherit-env.elasticbeanstalk.com/index.php";
@@ -42,6 +45,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
 
 
@@ -100,6 +104,8 @@ public class MainActivity extends Activity {
                 }
         );
 
+
+
         clearBtn.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -115,6 +121,24 @@ public class MainActivity extends Activity {
         );
     }
 
+    //Facebook App track
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.d(LOG_TAG,"in onResume");
+        // Logs 'install' and 'app activate' App Events.
+        AppEventsLogger.activateApp(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Log.d(LOG_TAG, "in onPause");
+        // Logs 'app deactivate' App Event.
+        AppEventsLogger.deactivateApp(this);
+    }
 
     private class LoadJson extends AsyncTask<String, String, String>{
 

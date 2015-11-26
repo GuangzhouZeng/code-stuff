@@ -29,9 +29,6 @@
         android:layout_alignBottom="@+id/btn24Hours"
         android:layout_toRightOf="@+id/btn24Hours"/>
 
-
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

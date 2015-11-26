@@ -2,6 +2,7 @@ package com.android.weatherit;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +10,16 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.share.Sharer;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareButton;
+import com.facebook.share.widget.ShareDialog;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,13 +51,16 @@ public class ResultActivity extends Activity {
     private String sunset;
 
     private String LOG_TAG="ResultActivity";
+
+    CallbackManager callbackManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
         DataManagement data= DataManagement.getINSTANCE();
-        Log.d(LOG_TAG,"testHere: "+data.getResult());
+        Log.d(LOG_TAG, "testHere: " + data.getResult());
         try {//extract data here
             extractData();
             testData();  //test here
@@ -55,10 +69,11 @@ public class ResultActivity extends Activity {
         }
 
         displayCurrent();
+        facebookShare();
 
         Button moreDetailsBtn = (Button) findViewById(R.id.btnMore);
         Button viewMapBtn = (Button) findViewById(R.id.btnMap);
-        ImageButton facebookImgBtn = (ImageButton) findViewById(R.id.imgBtnFacebook);
+        //ImageButton facebookImgBtn = (ImageButton) findViewById(R.id.imgBtnFacebook);
 
         moreDetailsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +84,56 @@ public class ResultActivity extends Activity {
             }
         });
 
+    }
+
+    private void facebookShare() {
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
+        final ShareDialog shareDialog=new ShareDialog(this);
+        shareDialog.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
+            @Override
+            public void onSuccess(Sharer.Result result) {
+                Log.d(LOG_TAG,"in onSuccess");
+                if(result.getPostId()==null){ //cancel button
+                    Toast.makeText(ResultActivity.this, "Post Cancelled", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(ResultActivity.this, "Post Successful", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onCancel() { //cancel icon
+                Toast.makeText(ResultActivity.this, "Post Cancelled", Toast.LENGTH_SHORT).show();
+                Log.d(LOG_TAG,"in onCancel");
+            }
+
+            @Override
+            public void onError(FacebookException e) {
+                Toast.makeText(ResultActivity.this, "Post Failed, please try again", Toast.LENGTH_SHORT).show();
+                Log.d(LOG_TAG,"in onError");
+            }
+        });
+
+
+        ImageButton shareButton = (ImageButton) findViewById(R.id.imgBtnFacebook);
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (shareDialog.canShow(ShareLinkContent.class)) {
+                    ShareLinkContent linkContent = new ShareLinkContent.Builder()
+                            .setContentTitle("Current Weather in " + cityVal + ", " + stateVal) //Current Weather in Los Angeles, CA
+                            .setContentDescription(summary + ", " + DataManagement.convertTemp(temper, degreeVal)) //Clear,56 F
+                            .setContentUrl(Uri.parse("www.forecast.io"))
+                            .setImageUrl(Uri.parse(DataManagement.convertIconToUrl(ResultActivity.this, sumIcon)))  //"http://cs-server.usc.edu:45678/hw/hw8/images/clear.png"
+                            .build();
+                    shareDialog.show(linkContent);
+                }
+            }
+        });
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
     private void displayCurrent() {
@@ -85,7 +150,6 @@ public class ResultActivity extends Activity {
         TextView tvVisi= (TextView) findViewById(R.id.textViewVisibilityVal);
         TextView tvSunr= (TextView) findViewById(R.id.textViewSunriseVal);
         TextView tvSuns= (TextView) findViewById(R.id.textViewSunsetVal);
-
 
         ivIcon.setImageResource(DataManagement.convertIcon(this, sumIcon));
         tvSumm.setText(DataManagement.convertSummary(summary, cityVal, stateVal));
@@ -109,7 +173,7 @@ public class ResultActivity extends Activity {
         stateVal=DataManagement.getState();
         degreeVal=DataManagement.getDegree();
 
-        //no need use the following method
+        //no need to use the following method
         //result=intent.getStringExtra("jsonResult");
         //cityVal=intent.getStringExtra("cityVal");
         //stateVal=intent.getStringExtra("stateVal");

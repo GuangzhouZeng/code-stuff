@@ -53,6 +53,17 @@ public class DataManagement {
         res=context.getResources().getIdentifier(sumIcon,"drawable",context.getPackageName());
         return res;
     }
+    static public String convertIconToUrl(Context context, String sumIcon){
+        String res="http://cs-server.usc.edu:45678/hw/hw8/images/";
+        switch(sumIcon){
+            case "clear-day":sumIcon="clear";break;
+            case "clear-night":sumIcon="clear_night";break;
+            case "partly-cloudy-day":sumIcon="cloud_day";break;
+            case "partly-cloudy-night":sumIcon="cloud_night";break;
+        }
+        res=res+sumIcon+".png";
+        return res;
+    }
     static public String convertTemp(String temp, String degree){
         int i=(int)Double.parseDouble(temp);
         if(degree.equals("Fahrenheit")){
