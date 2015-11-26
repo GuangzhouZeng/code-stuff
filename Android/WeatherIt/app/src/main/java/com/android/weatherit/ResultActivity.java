@@ -106,11 +106,14 @@ public class ResultActivity extends Activity {
         //extract data from MainActivity
         Intent intent=getIntent();
         result= DataManagement.getResult();
+        stateVal=DataManagement.getState();
+        degreeVal=DataManagement.getDegree();
+
+        //no need use the following method
         //result=intent.getStringExtra("jsonResult");
         //cityVal=intent.getStringExtra("cityVal");
-        stateVal=intent.getStringExtra("stateVal");
-        degreeVal=intent.getStringExtra("degreeVal");
-
+        //stateVal=intent.getStringExtra("stateVal");
+        //degreeVal=intent.getStringExtra("degreeVal");
 
         //extract data from json current
         JSONObject jsonObject = new JSONObject(result);

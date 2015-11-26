@@ -7,6 +7,7 @@ package com.android.weatherit;
 import android.content.Context;
 import android.util.Log;
 
+import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -31,6 +32,13 @@ public class DataManagement {
     public static void setResult(String returnJsonString) {
         DataManagement.returnJsonString = returnJsonString;
     }
+
+    //user's input
+    private static String street;
+    private static String city;
+    private static String state;
+    private static String degree;
+
 
     //below are convert functions, convert raw data into information can be used directly
     private static String LOG_TAG="DataManagement";
@@ -138,10 +146,76 @@ public class DataManagement {
         long timestamp=Long.parseLong(time);
         Date date=new Date(timestamp*1000);
         Log.d(LOG_TAG, "timestamp:"+String.valueOf(timestamp));
-        DateFormat formatter=new SimpleDateFormat("h:mm a");
+        DateFormat formatter=new SimpleDateFormat("hh:mm a");
 
         formatter.setTimeZone(TimeZone.getTimeZone(timezone));
         String res=formatter.format(date);
         return res;
+    }
+    static public String convertTimeToDate(String time, String timezone){
+        long timestamp=Long.parseLong(time);
+        Date date=new Date(timestamp*1000);
+        Log.d(LOG_TAG, "timestamp:" + String.valueOf(timestamp));
+
+        DateFormat formatterDay=new SimpleDateFormat("E");
+        formatterDay.setTimeZone(TimeZone.getTimeZone(timezone));
+        String day=formatterDay.format(date);
+
+        DateFormat formatterMonth=new SimpleDateFormat("M");
+        formatterMonth.setTimeZone(TimeZone.getTimeZone(timezone));
+        String month=formatterMonth.format(date);
+        switch(month){
+            case "1": month="Jan";break;
+            case "2": month="Feb";break;
+            case "3": month="Mar";break;
+            case "4": month="Apr";break;
+            case "5": month="May";break;
+            case "6": month="Jun";break;
+            case "7": month="Jul";break;
+            case "8": month="Aug";break;
+            case "9": month="Sep";break;
+            case "10": month="Oct";break;
+            case "11": month="Nov";break;
+            case "12": month="Dec";break;
+        }
+
+        DateFormat formatterDate=new SimpleDateFormat("dd");
+        formatterDate.setTimeZone(TimeZone.getTimeZone(timezone));
+        String dateDay=formatterDate.format(date);
+
+        String res=day+", "+month+" "+dateDay;
+        return res;
+    }
+
+    public static String getStreet() {
+        return street;
+    }
+
+    public static void setStreet(String street) {
+        DataManagement.street = street;
+    }
+
+    public static String getCity() {
+        return city;
+    }
+
+    public static void setCity(String city) {
+        DataManagement.city = city;
+    }
+
+    public static String getState() {
+        return state;
+    }
+
+    public static void setState(String state) {
+        DataManagement.state = state;
+    }
+
+    public static String getDegree() {
+        return degree;
+    }
+
+    public static void setDegree(String degree) {
+        DataManagement.degree = degree;
     }
 }

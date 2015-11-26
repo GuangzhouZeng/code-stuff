@@ -6,7 +6,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="More Details For Los Angeles, CA"
-        android:id="@+id/TextViewDetailSymmary"
+        android:id="@+id/textViewDetailSymmary"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:text="NEXT 24 HOURS"
         android:id="@+id/btn24Hours"
-        android:layout_below="@+id/TextViewDetailSymmary"
+        android:layout_below="@+id/textViewDetailSymmary"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="10dp"/>
 
@@ -65,13 +65,15 @@
                 android:id="@+id/headerSummary"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textColor="@color/white"/>
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:paddingLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Temp(\u2109)"
+                android:text="Temperature"
                 android:id="@+id/headerTemp"
                 android:layout_weight="1"
                 android:gravity="right"
@@ -105,13 +107,17 @@
         android:id="@+id/layout7Days">
 
 
-        <TextView
-            android:layout_width="wrap_content"
+        <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
-            android:id="@+id/textView4"
-            android:layout_alignParentRight="true"/>
+            android:id="@+id/scrollView7Content">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableRow7Content">
+
+            </TableLayout>
+        </ScrollView>
 
 
 

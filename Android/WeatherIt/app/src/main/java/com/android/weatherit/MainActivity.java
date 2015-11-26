@@ -171,11 +171,15 @@ public class MainActivity extends Activity {
                 //intent.putExtra("jsonResult", result); don't need this any more
                 DataManagement instance= DataManagement.getINSTANCE();
                 instance.setResult(result);
+                instance.setStreet(streetVal);
+                instance.setCity(cityVal);
+                instance.setState(stateVal);
+                instance.setDegree(degreeVal);
 
-                intent.putExtra("streetVal",streetVal);
+                /*intent.putExtra("streetVal",streetVal);
                 intent.putExtra("cityVal",cityVal);
                 intent.putExtra("stateVal", stateVal);
-                intent.putExtra("degreeVal", degreeVal);
+                intent.putExtra("degreeVal", degreeVal);*/
 
                 startActivity(intent);
             }
