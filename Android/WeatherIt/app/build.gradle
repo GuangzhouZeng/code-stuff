@@ -22,7 +22,9 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.facebook.android:facebook-android-sdk:4.8.2'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.facebook.android:facebook-android-sdk:4.8.2' //facebook
+    //compile 'com.hamweather:aeris-maps-library:1.1.1@aar'   //aeris map
     compile 'com.android.support:appcompat-v7:23.1.1'
+    compile files('libs/aerismaps-1.1.jar')
 }

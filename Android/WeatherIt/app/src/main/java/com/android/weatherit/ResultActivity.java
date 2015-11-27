@@ -18,7 +18,6 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.share.Sharer;
 import com.facebook.share.model.ShareLinkContent;
-import com.facebook.share.widget.ShareButton;
 import com.facebook.share.widget.ShareDialog;
 
 import org.json.JSONArray;
@@ -72,7 +71,7 @@ public class ResultActivity extends Activity {
         facebookShare();
 
         Button moreDetailsBtn = (Button) findViewById(R.id.btnMore);
-        Button viewMapBtn = (Button) findViewById(R.id.btnMap);
+        //Button viewMapBtn = (Button) findViewById(R.id.btnMap);
         //ImageButton facebookImgBtn = (ImageButton) findViewById(R.id.imgBtnFacebook);
 
         moreDetailsBtn.setOnClickListener(new View.OnClickListener() {

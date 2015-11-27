@@ -17,14 +17,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
+<!--    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View Map"
         android:id="@+id/btnMap"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/btnMore"
-        android:layout_toEndOf="@+id/btnMore" />
+        android:layout_toEndOf="@+id/btnMore" />-->
 
 
     <ImageButton
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/scrollView2"
-        android:layout_below="@+id/btnMap">
+        android:layout_below="@+id/btnMore">
 
         <TableLayout
             android:layout_width="match_parent"

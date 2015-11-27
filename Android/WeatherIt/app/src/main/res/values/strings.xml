@@ -89,8 +89,15 @@ At summo facete eam, aeque regione antiopam et sea.Atomorum moderatius ei qui, e
     <string name="visibilityText">Visibility</string>
     <string name="sunriseText">Sunrise</string>
     <string name="sunsetText">Sunset</string>
+
     <string name="facebook_app_id">989482401074625</string>
+    <string name="aeris_client_id">IZZ1PKueQvtRhVfq0grXf</string>
+    <string name="aeris_client_secret">KgOiYqGPIrAM3fMR1F6SyaanjqyTXTSzY5OhHiM7</string>
 
     <color name="light_blue">#2d92d2</color>
     <color name="white">#ffffff</color>
+    <string name="title_activity_map">MapActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
