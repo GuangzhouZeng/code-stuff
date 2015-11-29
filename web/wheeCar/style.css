@@ -204,9 +204,37 @@
 	.midFont{
 		font-size:20px;
 	}
+	.filter_header{
+		font-size:20px;
+		text-align:center;
+		border:solid 1px rgb(51,153,254);
+		padding-top:10px;
+		padding-bottom:10px;
+		margin-bottom:40px;
+		
+		
+	}
+	#sort_by_filter{
+		float:right;
+	}
+	#adv_search_btn{
+		float:right;
+	}
+	#adv_search_btn_div{
+		margin-top:10px;
+	}
+	#search_btn_div{
+		margin-top:20px;
+		margin-bottom:20px;
+		text-align:center;
+	}
+	#searchPanel{
+		color:rgb(68,112,226);
+	}
 	#how_it_works{
 		color:rgb(51,153,254);
 	}
+	
 	#step1{
 		padding-top:20%;
 		
