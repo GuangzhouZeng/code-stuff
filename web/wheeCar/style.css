@@ -2,9 +2,16 @@
 		padding:-1px;
 	}
 	#header{
+		/*affix use this
 		padding-top: 20px;
 		padding-right:10px;
 		color: rgb(51,153,254);
+		background-color:#f8f8f8;
+		height:50px;*/
+		
+		padding-top: 20px;
+		padding-right:10px;
+ 		color: rgb(51,153,254);
 		background-color:#f8f8f8;
 		height:110px;
 	}
@@ -20,18 +27,17 @@
 	.navbar-default .navbar-nav>li>a{
 		color: rgb(51,153,254);
 	}
+	/*.navbar{
+		margin-bottom:0px;
+	}*/
 	
 	.container-fluid{
 		padding:0px;
 	}
-	
-	#log_in{
-		float: right;
-	}
 	#welcome{
 		font-size:150%;
 		float: right;
-		margin-bottom:20px;
+		margin-top:-30px;/*affix delete it*/
 	}
 	#front{
 		background-image: url("img/front.png");
@@ -170,6 +176,135 @@
 		transition: box-shadow 0.5s;
 		box-shadow: 5px 0px 40px rgba(0,0,0, .2);
 	}
+	
+	/*how it works*/
+	#front_howitworks{
+		background-image: url("img/how-it-works-top-image.png");
+		height:1000px;
+		background-repeat:no-repeat;
+		background-size:cover;
+	}
+	
+
+	#how_it_works{
+		background-image: url("img/road-in-how-it-works.png");
+		/*height:2381px;*/
+		background-repeat:no-repeat;
+		background-size:cover;
+	}
+	
+	.affix {
+		top: 0;
+		width: 100%;
+		z-index:100;
+	}
+	.boldFont{
+		font-size:30px;
+	}
+	.midFont{
+		font-size:20px;
+	}
+	#how_it_works{
+		color:rgb(51,153,254);
+	}
+	#step1{
+		padding-top:20%;
+		
+	}
+	#step1_icon {
+		position: relative;
+		left: 4%;		
+	}
+	#step1_text{
+		position: relative;
+		right:18%;
+	}
+	#step1_img{
+		position: relative;
+		right:15%;
+		bottom:100px;
+	}
+	#step2{
+		padding-top:10%;
+	}
+	#step2_icon{
+		position:relative;
+		float:right;
+		right:20%;
+	}
+	#step2_text{
+		position:relative;
+		left:20%;
+	}
+	#step2_img{
+		position:relative;
+		bottom:120px;
+	}
+	
+	#step3{
+		padding-top:10%;
+		
+	}
+	#step3_icon {
+		position: relative;
+		left: 34%;		
+	}
+	#step3_text{
+		position: relative;
+		right:14%;
+	}
+	#step3_img{
+		position: relative;
+		right:15%;
+		bottom:100px;
+	}
+	
+	
+	#step4{
+		padding-top:6%;
+	}
+	#step4_icon{
+		position:relative;
+		float:right;
+		right:20%;
+	}
+	#step4_text{
+		position:relative;
+		left:20%;
+	}
+	#step4_img{
+		position:relative;
+		bottom:120px;
+	}
+	
+	
+	
+	#step5{
+		padding-top:4%;
+		padding-bottom:70px;
+	}
+	#step5_icon {
+		position: relative;
+		float:left;
+		left:70%;
+	}
+	#step5_text{
+		position: relative;
+		left:5%;
+	}
+	#step5_img{
+		position: relative;
+		bottom:130px;
+	}
+	
+	
+	#welcome_home{
+		padding-left: 5%;
+		text-align: center;
+	}
+
+
+	
 @media(max-width:768px) {
 	#footer_bg{
 		text-align:center;
@@ -187,12 +322,9 @@
 		font-size: 100%;
 		font-weight:600;
 	}
-	#log_in{
-		font-size: 100%;
-		font-weight:600;
-	}
 	#brand_header_img{
 		width:80%;
+		float: left;
 	}
 	.sharebutton{   
 		text-align:center;

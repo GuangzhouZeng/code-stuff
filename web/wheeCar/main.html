@@ -13,10 +13,21 @@
 	<link rel="icon" type="image/png" id="favicon" href="img/test.ico"/>
 
 </head>
+
 <body >
 <div class="container-fluid">
 
-<nav class="navbar navbar-default navbar-fixed-top">
+
+<!-- plan 2
+<div id="header" >
+	<div id="log" >		
+		<div id="welcome" >
+			<p >Welcome, Ralph Tao!</p>
+		</div>
+	</div>
+</div>
+
+<nav class="navbar navbar-default" data-spy="affix" data-offset-top="50">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -29,7 +40,7 @@
 	  </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" >
         <li><a href="#about"><img src="img/log_in.png"> Log out</a></li>
         <li><a href="#services">Buy</a></li>
         <li><a href="#portfolio">How it works</a></li>
@@ -39,17 +50,12 @@
     </div>
   </div>
 </nav>
-<div id="header" >
-	<div id="log" >
-		<div id="log_in" ><img src="img/log_in.png"> Log Out</div>
-		<br><br>		
-		<div id="welcome" >
-			<p >Welcome, Ralph Tao!</p>
-		</div>
-	</div>
-</div>
+-->
 
-	
+
+
+	<div id="headerContent"></div>
+
 
 
 
@@ -203,6 +209,8 @@
 	</div>
 	</div>
 	
+	<div id="footerContent">footerContent</div>
+	<!--
 	<div id="footer_bg" class="row">
 		<div class="col-sm-12 col-md-2 brand_footer">
 			<img src="img/brand_footer.png">
@@ -255,11 +263,22 @@
 			<a class="a2a_button_linkedin"></a>
 		</div>	
 	</div>
+	-->
 	</div>
 </div>
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+<script> 
+$(function(){
+	$("#headerContent").load("header.html"); 
+});
+
+$(function(){
+	$("#footerContent").load("footer.html"); 
+});
+</script> 	
 
 <script>
 
@@ -278,12 +297,12 @@ $(document).ready(function(){
 function move(value){
 	var oSpan=document.getElementById("data1");
 	var s=parseInt(oSpan.innerHTML);
-	var d=value;//结束的位置
+	var d=value;//end point
 	if(s<parseInt(d)){
 	
-	s= 0;//parseInt(oSpan.innerHTML);//起始位置
-	var time=1000;  //所用时间 1000毫秒（ 在1秒内 数值增加到d）;
-	var outTime=0;  //所消耗的时间
+	s= 0;//parseInt(oSpan.innerHTML);//begin point
+	var time=1000;  //animate 1000ms(increase to d in 1 second)
+	var outTime=0;  // time cost
 	var interTime=30;
 	var timer = setInterval(function(){
 		outTime+=interTime;
@@ -319,9 +338,9 @@ function move(value,mode){
 	var endPoint=value;//end point
 	if(s<parseInt(endPoint)){
 	
-	//s = 0;//parseInt(oSpan.innerHTML);//起始位置
-	var time=1000;  //所用时间 1000毫秒（ 在1秒内 数值增加到d）;
-	var outTime=0;  //所消耗的时间
+	//s = 0;//parseInt(oSpan.innerHTML);//begin point
+	var time=1000;  //animate 1000ms(increase to d in 1 second)
+	var outTime=0;  // time cost
 	var interTime=30;
 	var i=10;
 	var timer = setInterval(function(){
@@ -348,23 +367,18 @@ function move(value,mode){
 		},interTime);
 	}
 }
-
-
-
 </script>
 
+<!-- AddToAny BEGIN  important! do not delete!-->
 
-
-<!-- AddToAny BEGIN -->
-<!--
 <script type="text/javascript">
 var a2a_config = a2a_config || {};
 a2a_config.icon_color = "#3399fe";
 var a2a_config = a2a_config || {};
 a2a_config.prioritize = ["google_plus", "facebook", "linkedin", "twitter"];
 </script>
-<script type="text/javascript" src="page.js"></script>
--->
+<script type="text/javascript" src="assets/page.js"></script>
+
 <noscript>
 </body>
 </html>
