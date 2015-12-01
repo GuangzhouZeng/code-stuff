@@ -40,7 +40,7 @@
 		margin-top:-30px;/*affix delete it*/
 	}
 	#front{
-		background-image: url("img/front.png");
+		background-image: url("img/main/main-page-pic.png");
 		background-repeat:no-repeat;
 		background-size:cover;
 	}
@@ -67,7 +67,7 @@
 	}
 	#move_car{
 		height:340px;
-		background-image: url("img/move_car.png");
+		background-image: url("img/main/city-scape.png");
 		background-repeat:no-repeat;
 		background-size:cover;
 	}
@@ -87,6 +87,7 @@
 		font-size:64%;
 		text-align:left;
 		font-weight:bold;
+		height:100px;
 	}
 	.panel.panel-info.mypanel{
 		border-color: rgb(242,100,43);
@@ -121,7 +122,7 @@
 	
 	#data_container{
 		text-align:center;
-		background-image:url("img/world_map.png");
+		background-image:url("img/main/map-main-page.png");
 		background-repeat:no-repeat;
 		background-size:cover;
 		/*height:400px;*/
