@@ -2,14 +2,35 @@
 //num is we want to show.
 //tag should not be changed
 //time is duration of the animation
-$(document).ready(function(){
+
+var inview = new Waypoint.Inview({
+  element: $('#number_change'),
+  enter: function(direction) {
+    //notify('Enter triggered with direction ' + direction)
+		move(2001,1,1700);  
+		move(100,2,1300);
+		move(1600000,3,2000);
+		move(300,4,1500);
+  },
+  entered: function(direction) {
+	  inview.destroy();
+  },
+  exit: function(direction) {
+	  inview.destroy();
+  },
+  exited: function(direction) {
+	  inview.destroy();
+  }
+})
+
+/* $(document).ready(function(){
     $("#number_change").mouseenter(function(){
 		move(2001,1,900);  
 		move(100,2,700);
 		move(1600000,3,1000);
 		move(300,4,800);
     });
-});
+}); */
 function numberWithCommas(x) { //comma
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -22,6 +43,8 @@ function numberWithPercentage(x) {
 
 //input: the value current is
 function move(value,mode,time){
+	var endPoint=value;//end point
+	/*this is the old way. If the new way is stable, this can be deleted
 	var s; 
 	switch(mode){
 		case 1:s=$("#data1").text();s=numberWithoutCommas(s);break
@@ -30,8 +53,7 @@ function move(value,mode,time){
 		case 4:s=$("#data4").text();s=numberWithoutCommas(s);break;
 	}
 	s=parseInt(s);
-	var endPoint=value;//end point
-	if(s<parseInt(endPoint)){
+	if(s<parseInt(endPoint)){*/
 	//var fontSize=10; //from small to large
 	var outTime=0;  // time cost
 	var interTime=30;
@@ -58,5 +80,5 @@ function move(value,mode,time){
 			//$("#data1").text(numberWithCommas(endPoint));
 		}
 		},interTime);
-	}
+	//}
 }

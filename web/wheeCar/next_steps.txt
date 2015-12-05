@@ -1,7 +1,17 @@
-1. footer image
+
 2. how it works step image: 1, 2, 3, 4... (Ask for resources)
 3. car move in main
 4. car move in how it works. (Difficult)
 5. comment slider. 
-6. manage a better folder
+
 7. how it works responsive
+
+1. change dynamic number into scroll spy. see inview in http://imakewebthings.com/waypoints/ --- done
+
+2.favicon --done
+
+3.convas to draw the road
+
+4. font-family
+
+5. filter button

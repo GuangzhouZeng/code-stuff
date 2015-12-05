@@ -2,8 +2,3 @@
 2. Options' pic and text combine or split?
 
 
-1. change dynamic number into scroll spy. see inview in http://imakewebthings.com/waypoints/
-
-2.favicon
-
-3.convas
