@@ -23,6 +23,7 @@
 	}
 	.navbar-default{
 		border-color:#f8f8f8;
+		opacity:0.8;
 	}
 	.navbar-default .navbar-nav>li>a{
 		color: rgb(51,153,254);
@@ -37,10 +38,10 @@
 	#welcome{
 		font-size:150%;
 		float: right;
-		margin-top:-30px;/*affix delete it*/
+		padding-top:50px;
 	}
 	#front{
-		background-image: url("img/main/main-page-pic.png");
+		background-image: url("image/main/main-page-pic.png");
 		background-repeat:no-repeat;
 		background-size:cover;
 	}
@@ -67,7 +68,7 @@
 	}
 	#move_car{
 		height:340px;
-		background-image: url("img/main/city-scape.png");
+		background-image: url("image/main/city-scape.png");
 		background-repeat:no-repeat;
 		background-size:cover;
 	}
@@ -122,7 +123,7 @@
 	
 	#data_container{
 		text-align:center;
-		background-image:url("img/main/map-main-page.png");
+		background-image:url("image/main/map-main-page.png");
 		background-repeat:no-repeat;
 		background-size:cover;
 		/*height:400px;*/
@@ -163,11 +164,12 @@
 	.footer_list li{
 		margin-bottom:20px;
 	}
-	#sharebutton{
-		margin-top:30px;
-	}
 	.sharebutton{   
 		padding-top:40px;
+		margin-top:40px;
+	}
+	.sharebutton_img{
+		width:70px;
 	}
 	.row{
 		margin-left:0px;
@@ -180,15 +182,15 @@
 	
 	/*how it works*/
 	#front_howitworks{
-		background-image: url("img/how-it-works-top-image.png");
-		height:1000px;
+		background-image: url("image/howitworks/how-it-works-top-image.png");
+		height:614px;
 		background-repeat:no-repeat;
 		background-size:cover;
 	}
 	
 
 	#how_it_works{
-		background-image: url("img/road-in-how-it-works.png");
+		background-image: url("image/howitworks/road-in-how-it-works.png");
 		/*height:2381px;*/
 		background-repeat:no-repeat;
 		background-size:cover;
@@ -212,6 +214,7 @@
 		padding-top:10px;
 		padding-bottom:10px;
 		margin-bottom:40px;
+		margin-left:70px;
 		
 		
 	}
@@ -331,10 +334,13 @@
 		padding-left: 5%;
 		text-align: center;
 	}
-
-
 	
-@media(max-width:768px) {
+
+
+@media(max-width:767px) {
+	#verticalLine{
+		display:none;
+	}
 	#footer_bg{
 		text-align:center;
 	}
@@ -357,9 +363,25 @@
 	}
 	.sharebutton{   
 		text-align:center;
+		padding-top:0px;
+		margin-top:0px;
+	}
+	.share_group_img:after{
+		content:url("image/main/infinity-icon.png");
 	}
 }
-	
+
+@media(min-width:768px) and (max-width: 992px){
+	#verticalLine{
+		display:none;
+	}
+	.sharebutton{
+		padding-top:0px;
+		margin-top:0px;
+	}
+}
+@media(min-width:992px){}
+@media(min-width:1200px){}	
 	
 	
 	

@@ -1,0 +1,7 @@
+1. footer image
+2. how it works step image: 1, 2, 3, 4... (Ask for resources)
+3. car move in main
+4. car move in how it works. (Difficult)
+5. comment slider. 
+6. manage a better folder
+7. how it works responsive

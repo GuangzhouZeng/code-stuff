@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>WheeCar</title>
+	<meta charset="UTF-8">
+	<!-- Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- IE Edge Meta Tag -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div id="test_movingcar_body">
+
+</div>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="assets/imakewebthings-waypoints-0944e15/lib/jquery.waypoints.min.js"></script>
+<script src="assets/imakewebthings-waypoints-0944e15/lib/shortcuts/inview.min.js"></script>
+
+<script>
+
+var inview = new Waypoint.Inview({
+  element: $('#car_1'),
+  enter: function(direction) {
+    //$('#car_'+i).html('<img src="image/howitworks/car-icon-on-how-it-works-route.png">');
+	console.log('enter car_1');
+  },
+  entered: function(direction) {
+    //$('#car_'+i).html('<img src="image/howitworks/car-icon-on-how-it-works-route.png">');
+  },
+  exit: function(direction) {
+    //$('#car_'+i).html('');
+  },
+  exited: function(direction) {
+	//$('#car_'+i).html('');
+  }
+  
+});
+
+
+</script>
+
+</body>
+</html>

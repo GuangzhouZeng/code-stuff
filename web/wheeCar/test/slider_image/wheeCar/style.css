@@ -1,0 +1,476 @@
+﻿	body{
+		padding:-1px;
+	}
+	#header{
+		/*affix use this
+		padding-top: 20px;
+		padding-right:10px;
+		color: rgb(51,153,254);
+		background-color:#f8f8f8;
+		height:50px;*/
+		
+		padding-top: 20px;
+		padding-right:10px;
+ 		color: rgb(51,153,254);
+		background-color:#f8f8f8;
+		height:110px;
+	}
+	#brand_header{
+		float: left;
+	}
+	.navbar-brand{
+		padding:0px;
+	}
+	.navbar-default{
+		border-color:#f8f8f8;
+	}
+	.navbar-default .navbar-nav>li>a{
+		color: rgb(51,153,254);
+	}
+	/*.navbar{
+		margin-bottom:0px;
+	}*/
+	
+	.container-fluid{
+		padding:0px;
+	}
+	#welcome{
+		font-size:150%;
+		float: right;
+		margin-top:-30px;/*affix delete it*/
+	}
+	#front{
+		background-image: url("img/main/main-page-pic.png");
+		background-repeat:no-repeat;
+		background-size:cover;
+	}
+	#font_cnt_div{
+		padding-top:50px;
+		text-align:center;
+	}
+	#front_content{
+		font-size:350%;
+		color: rgb(253,101,52);
+	}
+	#font_btn_div{
+		text-align:center;
+		margin-top:300px;
+		padding-bottom:100px;
+	}
+	#front_btn {
+		color:#ffffff;
+		background-color:rgb(51,153,254);
+		border-radius: 8px;
+		padding: 15px 55px;
+		font-size: 25px;
+		border: 1px solid transparent;
+	}
+	#move_car{
+		height:340px;
+		background-image: url("img/main/city-scape.png");
+		background-repeat:no-repeat;
+		background-size:cover;
+	}
+	#options{
+		text-align:center;
+		margin-top:50px;
+		margin-bottom:30px;
+		color:rgb(38,128,240);
+		font-size:140%;
+	}
+	.panel-info>.panel-heading {
+		color: #ffffff;
+		background-color: rgb(242,100,43);
+		border-color: rgb(242,100,43);
+	}
+	.panel-body.option_desc{
+		font-size:64%;
+		text-align:left;
+		font-weight:bold;
+		height:100px;
+	}
+	.panel.panel-info.mypanel{
+		border-color: rgb(242,100,43);
+		border-left-width: 5px;
+		border-right-width: 5px;
+		border-top-width: 5px;
+		padding-bottom: 5px;
+		border-bottom-width: 5px;
+		border-radius:10px;
+	}
+	.opt_text {
+		margin: 0 0 50px;
+	}
+	
+	.carousel-inner > .item > img,
+	.carousel-inner > .item > a > img {
+		width: 70%;
+		margin: auto;
+	}	
+	.carousel-indicators{
+    bottom:-50px;
+	}
+	.carousel-indicators .active{
+		background-color:rgb(242,100,34);
+		width: 20px;
+		height: 20px;
+		margin: 10px;
+	}
+	.carousel-indicators li{
+		border: 1px solid rgb(242,100,34);
+		width: 20px;
+		height: 20px;
+		margin: 10px;
+	}
+	
+	#data_container{
+		text-align:center;
+		background-image:url("img/main/map-main-page.png");
+		background-repeat:no-repeat;
+		background-size:cover;
+		/*height:400px;*/
+	}
+	
+	
+	#data{
+		margin-top:100px;
+	}
+	.data_num{
+		font-size:10px;
+		color:rgb(242,100,34);
+	}
+	#data_desc{
+		font-size:30px;
+		color:rgb(51,153,254);
+	}
+	#footer_bg{
+		background:rgb(51,153,254);、
+		background-size:cover;
+	}
+	.brand_footer{
+		margin-top:60px;
+	}
+	.footer_list
+	{
+		margin-top:30px;
+		list-style-type: none;
+		padding-left: 10px;
+	}
+	a.footer_link{
+		font-family:"sans-serif","Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+		color: #ffffff;
+		text-decoration: none;
+		font-size:20px;
+		font-weight:100;
+	}
+	.footer_list li{
+		margin-bottom:20px;
+	}
+	#sharebutton{
+		margin-top:30px;
+	}
+	.sharebutton{   
+		padding-top:40px;
+	}
+	.row{
+		margin-left:0px;
+		margin-right:0px;
+	}
+	.panel:hover {
+		transition: box-shadow 0.5s;
+		box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+	}
+	
+	/*how it works*/
+	#front_howitworks{
+		background-image: url("img/how-it-works-top-image.png");
+		height:1000px;
+		background-repeat:no-repeat;
+		background-size:cover;
+	}
+	
+
+	#how_it_works{
+		background-image: url("img/road-in-how-it-works.png");
+		/*height:2381px;*/
+		background-repeat:no-repeat;
+		background-size:cover;
+	}
+	
+	.affix {
+		top: 0;
+		width: 100%;
+		z-index:100;
+	}
+	.boldFont{
+		font-size:30px;
+	}
+	.midFont{
+		font-size:20px;
+	}
+	.filter_header{
+		font-size:20px;
+		text-align:center;
+		border:solid 1px rgb(51,153,254);
+		padding-top:10px;
+		padding-bottom:10px;
+		margin-bottom:40px;
+		
+		
+	}
+	#sort_by_filter{
+		float:right;
+	}
+	#adv_search_btn{
+		float:right;
+	}
+	#adv_search_btn_div{
+		margin-top:10px;
+	}
+	#search_btn_div{
+		margin-top:20px;
+		margin-bottom:20px;
+		text-align:center;
+	}
+	#searchPanel{
+		color:rgb(68,112,226);
+	}
+	#how_it_works{
+		color:rgb(51,153,254);
+	}
+	
+	#step1{
+		padding-top:20%;
+		
+	}
+	#step1_icon {
+		position: relative;
+		left: 4%;		
+	}
+	#step1_text{
+		position: relative;
+		right:18%;
+	}
+	#step1_img{
+		position: relative;
+		right:15%;
+		bottom:100px;
+	}
+	#step2{
+		padding-top:10%;
+	}
+	#step2_icon{
+		position:relative;
+		float:right;
+		right:20%;
+	}
+	#step2_text{
+		position:relative;
+		left:20%;
+	}
+	#step2_img{
+		position:relative;
+		bottom:120px;
+	}
+	
+	#step3{
+		padding-top:10%;
+		
+	}
+	#step3_icon {
+		position: relative;
+		left: 34%;		
+	}
+	#step3_text{
+		position: relative;
+		right:14%;
+	}
+	#step3_img{
+		position: relative;
+		right:15%;
+		bottom:100px;
+	}
+	
+	
+	#step4{
+		padding-top:6%;
+	}
+	#step4_icon{
+		position:relative;
+		float:right;
+		right:20%;
+	}
+	#step4_text{
+		position:relative;
+		left:20%;
+	}
+	#step4_img{
+		position:relative;
+		bottom:120px;
+	}
+	
+	
+	
+	#step5{
+		padding-top:4%;
+		padding-bottom:70px;
+	}
+	#step5_icon {
+		position: relative;
+		float:left;
+		left:70%;
+	}
+	#step5_text{
+		position: relative;
+		left:5%;
+	}
+	#step5_img{
+		position: relative;
+		bottom:130px;
+	}
+	
+	
+	#welcome_home{
+		padding-left: 5%;
+		text-align: center;
+	}
+
+
+	
+@media(max-width:768px) {
+	#footer_bg{
+		text-align:center;
+	}
+	#front_content{
+		font-size:150%;
+	}
+	#front_btn {
+		border-radius: 8px;
+		padding: 15px 55px;
+		font-size: 15px;
+		border: 1px solid transparent;
+	}
+	#welcome{
+		font-size: 100%;
+		font-weight:600;
+	}
+	#brand_header_img{
+		width:80%;
+		float: left;
+	}
+	.sharebutton{   
+		text-align:center;
+	}
+}
+	
+	
+	#slider {
+		margin: 0 auto;
+		position: relative;
+	
+}
+
+
+	.scroll {
+		overflow: hidde;
+		width: 100%;
+		margin: 0px 0px 20px 0px;
+		position: relative;
+	}
+
+
+	.scrollContainer {
+		position: relative;
+}
+
+
+	.scrollContainer div.Spanel {
+		float: left;
+		position: relative;
+}
+
+	.car-list{
+		position:relative;
+		height : 100%;
+	}
+	.car-list li{
+		position:absolute;
+		overflow:hidden;
+		left:5px;
+	}
+	.car-list li.s1{
+		width:98%;
+		height:90%;
+		left:0;
+		top:0;
+	}
+	.car-list li.s2{
+		width:48%;
+		height:32%;
+		top:0;
+	}
+	.car-list li.s3{
+		width:48%;
+		height:32%;
+		left:50%;
+		top:0;
+	}
+	.car-list li.s4{
+		width:98%;
+		height:65%;
+		top:34%;
+	}
+	.car-list li.s5{
+		width:98%;
+		height:65%
+	}
+	.car-list li.s6{
+		width:48%;
+		height:32%;
+		top:67%;
+	}
+	.car-list li.s7{
+		width:48%;
+		height:32%;
+		left:50%;
+		top:67%;
+	}
+	.car-list li img{
+		display:block;
+		line-height:0;
+		font-size:0;
+		overflow:hidden;
+	}	
+
+	.text { 
+		width:100%; 
+		/*height:auto; */
+		background-color:#fff; 		
+		FILTER:alpha(opacity=60); 
+		opacity:0.7; 
+		-moz-opacity:0.7; 
+		position:absolute; 		
+		left:0px; 
+		bottom:0; 
+	}
+
+
+	.imgtext { 
+		width:100%; 
+		/*height:auto; */
+		float:left; 
+		padding:20px; 
+		color:#000; 		
+		font-size:12px; 
+		/*line-height:200%; */
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
