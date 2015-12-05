@@ -10,71 +10,13 @@
 	<!-- Minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="icon" type="image/png" id="favicon" href="img/test.ico"/>
+	<link rel="icon" type="image/png" id="favicon" href="img/favicon.ico"/>
 
 </head>
 
 <body >
 <div class="container-fluid">
-
-
-<!-- plan 2
-<div id="header" >
-	<div id="log" >		
-		<div id="welcome" >
-			<p >Welcome, Ralph Tao!</p>
-		</div>
-	</div>
-</div>
-
-<nav class="navbar navbar-default" data-spy="affix" data-offset-top="50">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <a class="navbar-brand" href="#">
-		<img id="brand_header_img" src="image/brand_header.png">
-	  </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right" >
-        <li><a href="#about"><img src="image/log_in.png"> Log out</a></li>
-        <li><a href="#services">Buy</a></li>
-        <li><a href="#portfolio">How it works</a></li>
-        <li><a href="#pricing">Love Stories</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
--->
-
-
-
 	<div id="headerContent"></div>
-
-
-
-
-<!--
-	<div id="header">
-		<div id="brand_header" >
-			<img  id="brand_header_img" src="image/brand_header.png">
-		</div>
-		<div id="log" >
-			<div id="log_in" ><img src="image/log_in.png"> Log Out</div>
-			<br><br>		
-			<div id="welcome" >
-			<p >Welcome, Ralph Tao!</p>
-			</div>
-		</div>
-	</div>
-	-->
-	
-	
 	<div id="front">
 		<div id="font_cnt_div">
 			<p id="front_content">A Brand New Way of Car Buying</p>
@@ -210,174 +152,13 @@
 	</div>
 	
 	<div id="footerContent">footerContent</div>
-	<!--
-	<div id="footer_bg" class="row">
-		<div class="col-sm-12 col-md-2 brand_footer">
-			<img src="image/brand_footer.png">
-		</div>
-		<div class="col-md-2 col-sm-6">
-			<ul class="footer_list">
-				<li><a class="footer_link">Contact</a></li>
-				<li><a class="footer_link">About Us</a></li>
-				<li><a class="footer_link">Press</a></li>
-			<ul>
-		</div>
-		<div class="col-md-2 col-sm-6">
-			<ul class="footer_list">
-				<li><a href="http://www.google.com" class="footer_link">Term of Use</a></li>
-				<li><a class="footer_link">FAQ</a></li>
-				<li><a class="footer_link">Privavy Policy</a></li>
-			<ul>
-		</div>
-		
-		<div class="verticalLine"></div>
-		
-		
-		<div class=" a2a_kit a2a_kit_size_32" >
-			<div  class="col-md-1 col-sm-4 col-xs-4 sharebutton">
-				<a class="a2a_button_google_plus "><img src="image/googleplus.png"></a>
-			</div>
-			<div class="col-md-1 col-sm-4 col-xs-4 sharebutton">
-				<a><img src="image/wechat.png"></a>
-			</div>
-			<div class="col-md-1 col-sm-4 col-xs-4 sharebutton">
-			<a class="a2a_button_facebook"><img src="image/facebook.png"></a>
-			</div>
-			<div class="col-md-1 col-sm-4 col-xs-4 sharebutton">
-			<a class="a2a_button_linkedin"><img src="image/linkedin.png"></a>
-			</div>
-			<div class="col-md-1 col-sm-4 col-xs-4 sharebutton">
-			<a class="a2a_button_twitter"><img src="image/twitter.png"></a>
-			</div>
-			<div class="col-md-1 col-sm-4 col-xs-4 sharebutton">
-				<a><img src="image/inst.png"></a>
-			</div>
-		</div>
-		
-		
-		<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-			<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-			<a class="a2a_button_facebook"></a>
-			<a class="a2a_button_twitter"></a>
-			<a class="a2a_button_google_plus"></a>
-			<a class="a2a_button_linkedin"></a>
-		</div>	
-	</div>
-	-->
 	</div>
 </div>
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    
-<script> 
-$(function(){
-	$("#headerContent").load("header.html"); 
-});
-
-$(function(){
-	$("#footerContent").load("footer.html"); 
-});
-</script> 	
-
-<script>
-
-$(document).ready(function(){
-    $("#number_change").mouseenter(function(){
-	
-		move(2001,1);
-		move(100,2);
-		move(1600000,3);
-		move(300,4);
-		
-		
-    });
-});
-/*
-function move(value){
-	var oSpan=document.getElementById("data1");
-	var s=parseInt(oSpan.innerHTML);
-	var d=value;//end point
-	if(s<parseInt(d)){
-	
-	s= 0;//parseInt(oSpan.innerHTML);//begin point
-	var time=1000;  //animate 1000ms(increase to d in 1 second)
-	var outTime=0;  // time cost
-	var interTime=30;
-	var timer = setInterval(function(){
-		outTime+=interTime;
-		if(outTime<time){
-			oSpan.innerHTML= numberWithCommas(parseInt(d/time*outTime));
-		}else{
-			oSpan.innerHTML=numberWithCommas(d);
-		}
-		},interTime);
-	}
-}
-*/
-function numberWithCommas(x) { //comma
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-function numberWithoutCommas(x){
-	return x.replace(/,/g,"");
-}
-function numberWithPercentage(x) {
-	return x.toString()+"%";
-}
-
-//input: the value current is
-function move(value,mode){
-	var s; 
-	switch(mode){
-		case 1:s=$("#data1").text();s=numberWithoutCommas(s);break
-		case 2:s=$("#data2").text();s=s.replace("%","");break;
-		case 3:s=$("#data3").text();s=numberWithoutCommas(s);break;
-		case 4:s=$("#data4").text();s=numberWithoutCommas(s);break;
-	}
-	s=parseInt(s);
-	var endPoint=value;//end point
-	if(s<parseInt(endPoint)){
-	
-	//s = 0;//parseInt(oSpan.innerHTML);//begin point
-	var time=1000;  //animate 1000ms(increase to d in 1 second)
-	var outTime=0;  // time cost
-	var interTime=30;
-	var i=10;
-	var timer = setInterval(function(){
-		outTime+=interTime;
-		i=i+0.9;
-		if(outTime<time){
-			switch(mode){
-				case 1: $("#data1").text(numberWithCommas(parseInt(endPoint/time*outTime)));break;
-				case 2: $("#data2").text(numberWithPercentage(parseInt(endPoint/time*outTime)));break;
-				case 3: $("#data3").text(numberWithCommas(parseInt(endPoint/time*outTime)));break;
-				case 4: $("#data4").text(numberWithCommas(parseInt(endPoint/time*outTime)));break;
-			}
-			$(".data_num").css({"font-size": "0"+i+"px"});
-			//$("#data1").text(numberWithCommas(parseInt(endPoint/time*outTime)));
-		}else{
-			switch(mode){
-				case 1: $("#data1").text(numberWithCommas(endPoint));break;
-				case 2: $("#data2").text(numberWithPercentage(endPoint));break;
-				case 3: $("#data3").text(numberWithCommas(endPoint));break;
-				case 4: $("#data4").text(numberWithCommas(endPoint));break;				
-			}
-			//$("#data1").text(numberWithCommas(endPoint));
-		}
-		},interTime);
-	}
-}
-</script>
-
-<!-- AddToAny BEGIN  important! do not delete!-->
-
-<script type="text/javascript">
-var a2a_config = a2a_config || {};
-a2a_config.icon_color = "#3399fe";
-var a2a_config = a2a_config || {};
-a2a_config.prioritize = ["google_plus", "facebook", "linkedin", "twitter"];
-</script>
-<script type="text/javascript" src="assets/page.js"></script>
+<script src="assets/dynamicNumber.js"></script>
+<script src="assets/frame.js"></script>
 
 <noscript>
 </body>

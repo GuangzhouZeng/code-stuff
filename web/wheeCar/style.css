@@ -1,14 +1,7 @@
 	body{
 		padding:-1px;
 	}
-	#header{
-		/*affix use this
-		padding-top: 20px;
-		padding-right:10px;
-		color: rgb(51,153,254);
-		background-color:#f8f8f8;
-		height:50px;*/
-		
+	#header{		
 		padding-top: 20px;
 		padding-right:10px;
  		color: rgb(51,153,254);
@@ -28,9 +21,6 @@
 	.navbar-default .navbar-nav>li>a{
 		color: rgb(51,153,254);
 	}
-	/*.navbar{
-		margin-bottom:0px;
-	}*/
 	
 	.container-fluid{
 		padding:0px;
@@ -126,15 +116,15 @@
 		background-image:url("image/main/map-main-page.png");
 		background-repeat:no-repeat;
 		background-size:cover;
-		/*height:400px;*/
+		height: 639px;
 	}
 	
 	
 	#data{
-		margin-top:100px;
+		margin-top:200px;
 	}
 	.data_num{
-		font-size:10px;
+		font-size:50px;
 		color:rgb(242,100,34);
 	}
 	#data_desc{
@@ -357,6 +347,12 @@
 		font-size: 100%;
 		font-weight:600;
 	}
+	#data_container{
+		height: auto;
+	}
+	#data{
+		margin-top:30px;
+	}
 	#brand_header_img{
 		width:80%;
 		float: left;
@@ -378,6 +374,9 @@
 	.sharebutton{
 		padding-top:0px;
 		margin-top:0px;
+	}
+	#data{
+		margin-top:100px;
 	}
 }
 @media(min-width:992px){}

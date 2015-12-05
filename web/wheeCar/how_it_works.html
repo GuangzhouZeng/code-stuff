@@ -11,8 +11,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="icon" type="image/png" id="favicon" href="img/test.ico"/>
-	
+	<link rel="icon" type="image/png" id="favicon" href="img/favicon.ico"/>
 	
 	<link href="slider/css/slider.css" rel="stylesheet"/>
 	<link href="assets/nouislider.min.css" rel="stylesheet">
@@ -173,90 +172,9 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 <script src="assets/nouislider.min.js"></script>
-<script src="assets/wNumb.js"></script>    
-	
-<script> 
-//header and footer
-    $(function(){
-      $("#headerContent").load("header.html"); 
-    });
-
-    $(function(){
-      $("#footerContent").load("footer.html"); 
-    });
-</script> 
-<script>
-var sliderYear = document.getElementById('slider_year');
-var sliderPrice = document.getElementById('slider_price');
-var sliderMileage = document.getElementById('slider_mileage');
-
-//year slider
-noUiSlider.create(sliderYear,{
-	connect: true,
-	start: [2000,2015],
-	step: 1,
-	range: {
-		'min': [ 2000 ],
-		'max': [ 2015 ]
-	}
-});
-sliderYear.noUiSlider.on('update',function(){
-	document.getElementById('year_minval').innerHTML=parseInt(sliderYear.noUiSlider.get()[0]);
-	document.getElementById('year_maxval').innerHTML=parseInt(sliderYear.noUiSlider.get()[1]);
-});
-
-//price slider
-noUiSlider.create(sliderPrice,{
-	connect: true,
-	start: [4000,60000],
-	step: 1000,
-	range: {
-		'min': [4000],
-		'max': [60000]
-	},
-	format: wNumb({
-		decimals: 0,
-		thousand: ',',
-		prefix: '$'
-	})
-});
-sliderPrice.noUiSlider.on('update',function(){
-	document.getElementById('price_minval').innerHTML=sliderPrice.noUiSlider.get()[0];
-	document.getElementById('price_maxval').innerHTML=sliderPrice.noUiSlider.get()[1];
-});
-
-//mileage slider
-noUiSlider.create(sliderMileage,{
-	connect:true,
-	start: [0,30000],
-	step: 1000,
-	range: {
-		'min': [0],
-		'max': [30000]
-	},
-	format: wNumb({
-		decimals: 0,
-		thousand: ',',
-	})
-});
-sliderMileage.noUiSlider.on('update',function(){
-	document.getElementById('mileage_minval').innerHTML=sliderMileage.noUiSlider.get()[0];
-	document.getElementById('mileage_maxval').innerHTML=sliderMileage.noUiSlider.get()[1];	
-});
-
-</script>
-
-
-<!-- AddToAny BEGIN  important! do not delete!-->
-
-<script type="text/javascript">
-var a2a_config = a2a_config || {};
-a2a_config.icon_color = "#3399fe";
-var a2a_config = a2a_config || {};
-a2a_config.prioritize = ["google_plus", "facebook", "linkedin", "twitter"];
-</script>
-<script type="text/javascript" src="assets/page.js"></script>
-
+<script src="assets/wNumb.js"></script>
+<script src="assets/frame.js"></script>
+<script src="assets/searchRangeSlider.js"></script>
 <noscript>
 </body>
 </html>
