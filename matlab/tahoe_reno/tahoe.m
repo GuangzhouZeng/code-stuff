@@ -14,5 +14,5 @@ if event==1
     end
 else
     threshold=window/2;
-    window=threshold;
+    window=1;
 end
