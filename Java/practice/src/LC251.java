@@ -55,7 +55,6 @@ public class LC251 {
             System.out.print(i.next()+" ");
         }
     }
-
 }
 
 
