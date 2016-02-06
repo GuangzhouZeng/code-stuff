@@ -36,6 +36,6 @@ public class LC247 {
         }
     }
     public static void main(String[] args){
-        printList(solution(1));
+        printList(solution(3));
     }
 }
