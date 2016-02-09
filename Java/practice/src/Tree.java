@@ -12,11 +12,11 @@ public class Tree {
         int idx = 0;
         root = new TreeNode((int)arr[idx++]);
         queue.add(root);
-        while(!queue.isEmpty()&&idx<arr.length){
+        while(!queue.isEmpty() && idx<arr.length){
             TreeNode temp = queue.poll();
-            if(arr[idx] != null) temp.left = new TreeNode((int)arr[idx]);
+            if(idx<arr.length && arr[idx] != null) temp.left = new TreeNode((int)arr[idx]);
             idx++;
-            if(arr[idx] != null) temp.right = new TreeNode((int)arr[idx]);
+            if(idx<arr.length && arr[idx] != null) temp.right = new TreeNode((int)arr[idx]);
             idx++;
             if(temp.left != null) queue.offer(temp.left);
             if(temp.right != null) queue.offer(temp.right);

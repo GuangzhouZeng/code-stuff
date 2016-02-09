@@ -3,7 +3,7 @@ import java.util.List;
 
 /**
  * Created by guangzhouzeng on 2/8/16.
- * Check if all integers in the list can be grouped into 5 consecutive number. For example [1,2,2,3,3,4,4,5,6]
+ * Check if all integers in the list can be grouped into 5 consecutive number. For example [1,2,2,3,3,4,4,5,5,6]
  * should return True because it can be grouped into (1,2,3,4,5)(2,3,4,5,6) with no other elements left.
  */
 public class GroupNumber {
