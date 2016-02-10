@@ -19,18 +19,4 @@ public class PrintList {
         }
         System.out.println();
     }
-
-    public static void printArrayInt(int[] arr){
-        for(int num: arr){
-            System.out.print(num + " ");
-        }
-        System.out.println();
-    }
-
-    public static void printArrayInt(Integer[] arr){
-        for(int num: arr){
-            System.out.print(num + " ");
-        }
-        System.out.println();
-    }
 }

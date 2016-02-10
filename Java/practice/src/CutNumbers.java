@@ -2,7 +2,7 @@
  * Created by guangzhouzeng on 2/9/16.
  */
 import java.util.*;
-import PrintOut.PrintList;
+import PrintOut.PrintArray;
 public class CutNumbers {
     static int cutNumbers(int cuts, Integer[] nums){
         Arrays.sort(nums, new Comparator<Integer>(){
@@ -18,7 +18,7 @@ public class CutNumbers {
             }
         });
 
-        PrintList.printArrayInt(nums);
+        PrintArray.printArrayInt(nums);
 
         int idx = 0;
         int res = 0;
