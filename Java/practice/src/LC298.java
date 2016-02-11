@@ -71,8 +71,5 @@ public class LC298 {
         maxLen = Math.max(maxLen, Math.max(maxLeft, maxRight));
 
         return Math.max(maxLeft, maxRight);
-
-
     }
-
 }

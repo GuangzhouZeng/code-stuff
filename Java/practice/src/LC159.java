@@ -40,9 +40,43 @@ public class LC159 {
         return res;
     }
 
+    public static int solution2(String str){
+        HashMap<Character, Integer> map = new HashMap<>();
+        int low = -1;
+        int res = 0;
+        for(int i = 0; i < str.length(); i++){
+            if(map.size() <= 2){
+                map.put(str.charAt(i), i);
+            }
+            if(map.size() > 2){
+                int curVal = i;
+                char curKey = ' ';
+                for(char key: map.keySet()){
+                    if(map.get(key) < curVal){
+                        curVal = map.get(key);
+                        curKey = key;
+                    }
+                }
+                low = curVal;
+                map.remove(curKey);
+            }
+            res = Math.max(res, i - low);
+        }
+        return res;
+    }
+
     public static void main(String[] args){
-        String str = "acacbacacac";
-        System.out.println(solution(str));
+        String[] strs = {"acacbacacac",
+                        "asdavdsfafe",
+                        "adefwrfdsfs",
+                        "asdefsdf",
+                        "",
+                        "a",
+                        "ac",
+                        "asdiefwonksdfnibfwjbfkdsfrhnwbvdjsbvfieuhvbfjfksbvajkhfuehfwijbfjkdsbforubfijsbjvksbvbirwebv"};
+        for(String str: strs) {
+            System.out.println(solution(str) + " " + solution2(str));
+        }
     }
 
 
