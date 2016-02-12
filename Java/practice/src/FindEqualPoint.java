@@ -1,6 +1,7 @@
 /**
  * Created by guangzhouzeng on 2/10/16.
  */
+//find a point which left-up area is equal to its right-down area.
 public class FindEqualPoint {
     static int[] findPoint(int[][] matrix){
         if(matrix == null || matrix.length == 0 || matrix[0].length == 0) return new int[]{-1, -1};
@@ -21,6 +22,7 @@ public class FindEqualPoint {
                 }
             }
         }
+
         return new int[]{-1, -1};
     }
 
@@ -36,8 +38,17 @@ public class FindEqualPoint {
                 {5,4,3,2,1}
         };
 
-        int[] pos = findPoint(matrix);
+        /*
+        a1,a2,
+        a3,a4
 
+        s1,s2
+        s3,s4
+
+        Sum4 = s4 - s2 - s3 + s1;
+        */
+
+        int[] pos = findPoint(matrix);
         System.out.println(pos[0] + ", " + pos[1]);
     }
 }

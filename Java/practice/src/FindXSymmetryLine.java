@@ -6,6 +6,8 @@ import java.util.*;
 /*
 improvement: partition by median. pick element from left part to find element in right part.
 but this will take more space.
+Another improvement: Use long to store two integer, and put the new long value into a hashset,
+then just use contains to check if it has a corresponding point.
 assume all points and median is int here. otherwise should use double to make it more precisely
  */
 public class FindXSymmetryLine {

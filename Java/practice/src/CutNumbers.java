@@ -42,7 +42,18 @@ public class CutNumbers {
         return res;
     }
     public static void main(String[] args){
-        Integer[] nums = {10, 0, 19, 20, 39, 30, 98, 83};
+        Integer[] nums = {10, 0, 7,8,3,19, 20, 39, 30, 98, 83};
         System.out.println(cutNumbers(1, nums));
     }
 }
+
+
+/*
+num     cuts    10s     ratio
+0-9     0       0       0
+10      0       1       0
+11-19   1       1       1
+20      1       2       1/2
+21-29   2       2       1
+30      2       3       2/3
+ */
