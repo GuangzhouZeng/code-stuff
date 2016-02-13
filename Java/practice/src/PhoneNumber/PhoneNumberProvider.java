@@ -6,6 +6,14 @@ import java.util.Iterator;
 /**
  * Created by guangzhouzeng on 2/12/16.
  */
+/*
+2nd solution is to use only one set to store the phone number which has already been used, and randomly generate phone number which hasn't
+been used before to be a new number whenever we need a new number. But this will take too much time when the system of phone number are
+almost saturated.
+3rd solution is to use trie to store the number. Each node can store current number of phone number left at its path. we can create new
+number by search the path has the most number left. This will take only O(7*log10) time.
+
+ */
 public class PhoneNumberProvider {
     private HashSet<String> regNum;
     private HashSet<String> unregNum;

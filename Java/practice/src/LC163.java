@@ -32,6 +32,6 @@ public class LC163 {
 
     public static void main(String[] args){
         int[] vals = {0,3,4,5, 50, 75,80};
-        printList(solution(vals, 0, 100));
+        printList(solution(vals, 0, 79));
     }
 }
