@@ -30,7 +30,7 @@ public class LC259 {
                 if(target <= sum){
                     k--;
                 }else{
-                    res += (k - j) ;
+                    res += (k - j);
                     j++;
                 }
             }

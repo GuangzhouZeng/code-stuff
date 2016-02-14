@@ -40,7 +40,6 @@ public class LC251 {
         }
     }
 
-
     public static void main(String[] agrs){
         List<List<Integer>> vec2d = new ArrayList<>();
         List<Integer> row1 = Arrays.asList(1,2);
