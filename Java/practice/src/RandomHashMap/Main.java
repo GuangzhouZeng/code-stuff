@@ -63,7 +63,6 @@ public class Main {
         map2.printMap();
         map2.printList();
 
-
     }
 
 }

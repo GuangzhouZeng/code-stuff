@@ -45,3 +45,28 @@ public class LC325 {
         System.out.println(solution(arr, k));
     }
 }
+
+   // Find the longest continuous sublist, that sums to 0
+
+
+
+
+
+/*
+        map:
+        [4,0], [12, 1], [15, 2], [8, 3], [4, 4], [12, 5]
+
+        []
+        [0]
+        [8, 3, 4, -7, 2, -2]
+        [8, 11, 15, 8 ,10, 8]
+
+
+        [4, 2, -6]
+        [4, 6, 0]
+
+        sums: [0]
+
+        [Integer.MAX_VALUE, Integer.MAX_VALUE]
+        []
+*/

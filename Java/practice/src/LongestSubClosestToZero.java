@@ -36,7 +36,6 @@ public class LongestSubClosestToZero {
             sum += arrs[i];
             pairs[i][0] = sum;
             pairs[i][1] = i;
-
         }
 
         Arrays.sort(pairs, new Comparator<int[]>(){

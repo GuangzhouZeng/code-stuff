@@ -9,8 +9,6 @@ import java.util.Random;
  * Created by guangzhouzeng on 2/9/16.
  */
 public class RandomHashMap<K, V> {
-    K key;
-    V val;
     HashMap<K, V> map;
     List<K> keys;
     public RandomHashMap(){
@@ -20,7 +18,7 @@ public class RandomHashMap<K, V> {
 
     //insert
     public void insertIntoMap(K key, V val){
-        map.put(key,val);
+        map.put(key, val);
         keys.add(key);
     }
 
@@ -41,6 +39,12 @@ public class RandomHashMap<K, V> {
         return rd.nextInt(max - min) + min;
     }
 
+    //random get
+    public V randomGetFromMap(){
+        int index = getRandomIndex(0, keys.size());
+        K key = keys.get(index);
+        return map.get(key);
+    }
 
     //print map
     public void printMap(){
@@ -51,6 +55,8 @@ public class RandomHashMap<K, V> {
         System.out.println();
     }
 
+
+
     //print list
     public void printList(){
         System.out.print("PrintList: ");
@@ -60,10 +66,5 @@ public class RandomHashMap<K, V> {
         System.out.println();
     }
 
-    //random get
-    public V randomGetFromMap(){
-        int index = getRandomIndex(0, keys.size());
-        K key = keys.get(index);
-        return map.get(key);
-    }
+
 }
