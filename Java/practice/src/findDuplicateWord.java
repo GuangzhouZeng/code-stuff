@@ -37,10 +37,38 @@ public class findDuplicateWord {
         return leftMost == Integer.MAX_VALUE ? "" : words[leftMost] + "!";
     }
 
+    //////////////round 2
+    public static String findFirstDuplicate(String str){
+        String[] words = str.split(" +");
+        HashSet<String> set = new HashSet<>();
+        for(String word: words){
+            if(set.contains(word)) return word;
+            set.add(word);
+        }
+        return "";
+    }
+
+    public static String findLeftMostDuplicate(String str){
+        String[] words = str.split(" +");
+        HashMap<String, Integer> map = new HashMap();
+        int leftMost = Integer.MAX_VALUE;
+        for(int i = 0; i < words.length; i++){
+            if(map.containsKey(words[i])){
+                leftMost = Math.min(leftMost, map.get(words[i]));
+            }else{
+                map.put(words[i], i);
+            }
+        }
+        return leftMost == Integer.MAX_VALUE ? "" : words[leftMost];
+    }
+
     public static void main(String[] args){
         String str = "abc def ghi jkl ghi abc";
         System.out.println(find(str));
         System.out.println(findFirst(str));
+
+        System.out.println(findFirstDuplicate(str));
+        System.out.println(findLeftMostDuplicate(str));
     }
 }
 /*

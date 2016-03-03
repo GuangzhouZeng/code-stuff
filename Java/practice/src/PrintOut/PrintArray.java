@@ -18,6 +18,13 @@ public class PrintArray {
         System.out.println();
     }
 
+    public static void printArrayChar(char[] chars){
+        for(char c: chars){
+            System.out.print(c);
+        }
+        System.out.println();
+    }
+
     public static void print2DArray(int[][] arrs){
         for(int[] arr: arrs){
             for(int num: arr){

@@ -36,6 +36,35 @@ public class TwoSum {
         return res;
     }
 
+    ////////round 2
+    public static boolean twoSumUnsorted2(int[] nums, int target){
+        if(nums == null || nums.length < 2) return false;
+        HashSet<Integer> set = new HashSet<>();
+        for(int num: nums){
+            if(set.contains(target - num)){
+                return true;
+            }
+            set.add(num);
+        }
+        return false;
+    }
+
+
+    public static boolean twoSumSorted2(int[] nums, int target){
+        if(nums == null || nums.length < 2) return false;
+        int left = 0, right = nums.length - 1;
+        while(left < right){
+            if(nums[left] + nums[right] == target){
+                return true;
+            }else if(nums[left] + nums[right] < target){
+                left += 1;
+            }else {
+                right -= 1;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args){
         int[] arr1 = {4,3,1,7,6,9};
         int[] arr2 = {1,3,4,6,7,9};
@@ -43,5 +72,8 @@ public class TwoSum {
 
         PrintArray.printArrayInt(twoSumNotSorted(arr1, target));
         PrintArray.printArrayInt(twoSumSorted(arr2, target));
+
+        System.out.println(twoSumUnsorted2(arr2, target));
+        System.out.println(twoSumSorted2(arr2, target));
     }
 }
