@@ -5,10 +5,10 @@ package MyObserverPattern;
  */
 import java.util.ArrayList;
 public class WeatherData implements Subject {
-    float temperature;
-    float humidity;
-    float pressure;
-    ArrayList<Observer> observers;
+    private float temperature;
+    private float humidity;
+    private float pressure;
+    private ArrayList<Observer> observers;
 
     WeatherData(){
         observers = new ArrayList<>();
