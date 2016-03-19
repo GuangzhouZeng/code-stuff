@@ -17,7 +17,7 @@ public class WeatherStation1 implements Observer,Display {
 
     @Override
     public void update(Observable obs, Object arg) {
-        if(obs instanceof WeatherData){
+        if(obs instanceof WeatherData){ // in case observe multiple subjects
             WeatherData weatherData = (WeatherData)obs;
             this.temperature = weatherData.getTemperature();
             this.humidity = weatherData.getHumidity();
