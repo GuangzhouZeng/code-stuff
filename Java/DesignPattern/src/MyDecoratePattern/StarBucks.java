@@ -10,7 +10,7 @@ public class StarBucks {
         drink1 = new Milk(drink1);
         drink1 = new Mocha(drink1);
         drink1 = new Whip(drink1);
-        System.out.println("Description: " + drink1.getDescription() + "\nCost: " + drink1.cost() );
+        System.out.println("Description: " + drink1.getDescription() + "\nCost: " + drink1.cost());
 
     }
 }
