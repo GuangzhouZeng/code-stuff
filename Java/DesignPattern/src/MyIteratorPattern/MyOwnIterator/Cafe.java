@@ -45,7 +45,5 @@ public class Cafe {
             System.out.print(lunchIterator.next() + " ");
         }
         System.out.println();
-
-
     }
 }
