@@ -18,7 +18,9 @@ public class GumballMachine {
         hasCoinState = new HasCoinState(this);
         soldState = new SoldState(this);
         soldOutState = new SoldOutState(this);
-        refill(count);
+        if(count > 0) {
+            refill(count);
+        }
     }
 
     public void insertCoin(){
